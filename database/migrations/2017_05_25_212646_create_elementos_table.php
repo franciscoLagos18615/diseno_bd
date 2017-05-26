@@ -17,7 +17,7 @@ class CreateElementosTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->integer('cantidad');
-
+                
             $table->integer('id_recoleccion')->unsigned();
             $table->foreign('id_recoleccion')->references('id')->on('recolecciones')->onDelete('cascade');
         });

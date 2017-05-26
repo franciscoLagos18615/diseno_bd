@@ -22,6 +22,10 @@ class CreateApoyosEconomicosTable extends Migration
             $table->decimal('avance');
             $table->integer('meta');
             $table->integer('recaudacion_actual');
+            $table->integer('id_usuario_valida');
+            $table->boolean('valida');
+
+            $table->foreign('id_usuario_valida')->references('id')->on('usuarios')->onDelete('cascade');
 
             $table->integer('id_cuenta_banco')->unsigned();
             $table->foreign('id_cuenta_banco')->references('id')->on('cuentas_banco')->onDelete('cascade');

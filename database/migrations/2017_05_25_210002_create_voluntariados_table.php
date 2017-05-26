@@ -15,6 +15,7 @@ class CreateVoluntariadosTable extends Migration
     {
         Schema::create('voluntariados', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_usuario_valida')->nullable();
             $table->string('nombre_medida');
             $table->date('fecha_inicio');
             $table->date('fecha_termino');
@@ -22,9 +23,10 @@ class CreateVoluntariadosTable extends Migration
             $table->string('perfil_voluntario');
             $table->integer('personas');
             $table->string('tipo_trabajo');
-            $table->string('direccion');
+            $table->string('direccion')->nullable();
+            $table->boolean('valida');
 
-
+            $table->foreign('id_usuario_valida')->references('id')->on('usuarios')->onDelete('cascade');
             $table->integer('id_catastrofe')->unsigned();
             $table->foreign('id_catastrofe')->references('id')->on('catastrofes')->onDelete('cascade');
 

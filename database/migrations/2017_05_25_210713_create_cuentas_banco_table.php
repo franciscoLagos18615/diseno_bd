@@ -17,7 +17,7 @@ class CreateCuentasBancoTable extends Migration
             $table->increments('id');
             $table->integer('numero_cuenta');
             $table->string('banco');
-            $table->integer('tipo_vuenta');
+            $table->integer('tipo_cuenta');
             $table->integer('run');
         });
     }

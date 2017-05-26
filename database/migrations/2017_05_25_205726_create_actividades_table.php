@@ -17,6 +17,7 @@ class CreateActividadesTable extends Migration
 
             $table->increments('id');
             $table->string('descripcion');
+            $table->integer('recaudacion');
 
             $table->integer('id_evento')->unsigned();
             $table->foreign('id_evento')->references('id')->on('eventos')->onDelete('cascade');

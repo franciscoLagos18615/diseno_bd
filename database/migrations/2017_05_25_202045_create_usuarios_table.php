@@ -19,11 +19,10 @@ class CreateUsuariosTable extends Migration
             $table->string('password');
             $table->string('run');
             $table->string('email')->unique();
-            $table->integer('telefono');
+            $table->integer('telefono')->nullable();
             $table->boolean('activo');
             $table->boolean('visible');
-            $table->rememberToken();
-            $table->timestamps();
+
         });
     }
 

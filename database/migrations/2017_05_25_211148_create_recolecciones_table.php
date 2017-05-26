@@ -15,14 +15,19 @@ class CreateRecoleccionesTable extends Migration
     {
         Schema::create('recolecciones', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_usuario_valida');
             $table->string('nombre_medida');
             $table->date('fecha_inicio');
             $table->date('fecha_termino');
             $table->decimal('avance');
+            $table->integer('elementos_necesarios');
             $table->string('perfil_voluntario');
-            $table->integer('personas');
             $table->string('direccion');
+            $table->boolean('valida');
 
+
+            $table->foreign('id_usuario_valida')->references('id')->on('usuarios')->onDelete('cascade');
+            
             $table->integer('id_catastrofe')->unsigned();
             $table->foreign('id_catastrofe')->references('id')->on('catastrofes')->onDelete('cascade');
 
