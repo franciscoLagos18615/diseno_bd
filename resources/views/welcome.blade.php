@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel 222
+                    Gestionador de Ayuda para Catastrofes
                 </div>
 
                 <div class="links">
