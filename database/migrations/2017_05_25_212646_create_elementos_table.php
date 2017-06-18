@@ -20,6 +20,8 @@ class CreateElementosTable extends Migration
                 
             $table->integer('id_recoleccion')->unsigned();
             $table->foreign('id_recoleccion')->references('id')->on('recolecciones')->onDelete('cascade');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

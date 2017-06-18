@@ -22,6 +22,8 @@ class CreateUsuariosTable extends Migration
             $table->integer('telefono')->nullable();
             $table->boolean('activo');
             $table->boolean('visible');
+            $table->rememberToken();
+            $table->timestamps();
 
         });
     }

@@ -24,6 +24,8 @@ class CreateDonacionesTable extends Migration
 
             $table->integer('id_cuenta_banco')->unsigned();
             $table->foreign('id_cuenta_banco')->references('id')->on('cuentas_banco')->onDelete('cascade');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

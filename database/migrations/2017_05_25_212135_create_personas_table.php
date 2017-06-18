@@ -31,6 +31,8 @@ class CreatePersonasTable extends Migration
 
             $table->integer('id_voluntariado');
             $table->foreign('id_voluntariado')->references('id')->on('voluntariados')->onDelete('cascade');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

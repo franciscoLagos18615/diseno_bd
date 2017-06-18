@@ -19,6 +19,8 @@ class CreateCuentasBancoTable extends Migration
             $table->string('banco');
             $table->integer('tipo_cuenta');
             $table->integer('run');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

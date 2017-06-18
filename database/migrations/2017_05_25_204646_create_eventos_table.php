@@ -38,6 +38,8 @@ class CreateEventosTable extends Migration
 
             $table->integer('id_muro')->unsigned();
             $table->foreign('id_muro')->references('id')->on('muros')->onDelete('cascade');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

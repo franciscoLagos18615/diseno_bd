@@ -28,6 +28,8 @@ class CreateObjetivosDeAyudaTable extends Migration
 
             $table->integer('id_voluntariado')->unsigned();
             $table->foreign('id_voluntariado')->references('id')->on('voluntariados')->onDelete('cascade');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

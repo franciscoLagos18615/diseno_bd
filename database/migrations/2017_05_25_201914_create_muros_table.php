@@ -15,6 +15,8 @@ class CreateMurosTable extends Migration
     {
         Schema::create('muros', function (Blueprint $table) {
             $table->increments('id');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 
