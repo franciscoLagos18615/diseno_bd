@@ -37,4 +37,5 @@ class Evento extends Model{
 	public function objetivos(){
 		return $this->hasMany(Objetivo_de_ayuda::class,'id_evento');
 	}
+
 }

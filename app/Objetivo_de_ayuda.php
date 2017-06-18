@@ -26,5 +26,4 @@ class Objetivo_de_ayuda extends Model{
 	public function evento(){
 		return $this->belongsTo(Evento::class,'id_evento');
 	}
-
 }

@@ -14,4 +14,5 @@ class Elemento extends Model{
 	public function recoleccion(){
 		return $this->belongsTo(Recoleccion::class,'id_recoleccion');
 	}
+
 }

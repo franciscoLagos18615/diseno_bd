@@ -42,4 +42,5 @@ class Usuario extends Model{
 	public function actividades(){
 		return $this->hasMany(Actividad::class,'id_usuario');
 	}
+
 }

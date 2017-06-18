@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 
 class Donacion extends Model{
-}
+
 	protected $table='donaciones';
 
 	protected $fillable = ['fecha','hora','monto','id_persona','id_cuenta_banco'];
@@ -18,4 +18,6 @@ class Donacion extends Model{
 
 	public function persona(){
 		return $this->belongsTo(Persona::class,'id_persona');
+	
 	}
+}

@@ -38,5 +38,4 @@ class Apoyo_economico extends Model{
 	public function personas(){
 		return $this->hasMany(Persona::class,'id_apoyo');
 	}
-
 }

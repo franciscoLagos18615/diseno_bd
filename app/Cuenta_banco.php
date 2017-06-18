@@ -18,4 +18,5 @@ class Cuenta_banco extends Model{
 	public function donaciones(){
 		return $this->hasMany(Donacion::class,'id_cuenta_banco');
 	}
+
 }
