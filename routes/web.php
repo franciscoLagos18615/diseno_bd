@@ -24,3 +24,12 @@ Route::get('view', function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/addCatastrofe',function(){
+	return view('agregarCatastrofe');
+});
+
+Route::get('/menuInicio',function(){
+	return view('menuPrincipalG');
+});
