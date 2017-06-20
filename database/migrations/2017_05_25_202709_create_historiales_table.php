@@ -19,7 +19,7 @@ class CreateHistorialesTable extends Migration
             $table->time('hora');
 
             $table->integer('id_usuario')->unsigned();
-            $table->foreign('id_usuario')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });

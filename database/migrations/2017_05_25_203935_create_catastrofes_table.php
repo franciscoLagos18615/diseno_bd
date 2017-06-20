@@ -21,7 +21,7 @@ class CreateCatastrofesTable extends Migration
 
             $table->integer('id_usuario')->unsigned();
 
-            $table->foreign('id_usuario')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
 

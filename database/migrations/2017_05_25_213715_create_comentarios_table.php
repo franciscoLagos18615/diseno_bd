@@ -18,7 +18,7 @@ class CreateComentariosTable extends Migration
             $table->string('descripcion');
 
             $table->integer('id_usuario')->unsigned();
-            $table->foreign('id_usuario')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
 
             $table->integer('id_muro')->unsigned();
             $table->foreign('id_muro')->references('id')->on('muros')->onDelete('cascade');

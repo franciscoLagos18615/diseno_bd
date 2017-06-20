@@ -26,12 +26,12 @@ class CreateVoluntariadosTable extends Migration
             $table->string('direccion')->nullable();
             $table->boolean('valida');
 
-            $table->foreign('id_usuario_valida')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->foreign('id_usuario_valida')->references('id')->on('users')->onDelete('cascade');
             $table->integer('id_catastrofe')->unsigned();
             $table->foreign('id_catastrofe')->references('id')->on('catastrofes')->onDelete('cascade');
 
             $table->integer('id_usuario')->unsigned();
-            $table->foreign('id_usuario')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
 
             $table->integer('id_muro')->unsigned();
             $table->foreign('id_muro')->references('id')->on('muros')->onDelete('cascade');
