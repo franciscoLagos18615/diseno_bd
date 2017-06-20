@@ -33,8 +33,8 @@
                 </select>
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail">Comuna</label>
-                <input type="email" class="form-control" id="exampleInputEmail" placeholder="Nombre de la Comuna">
+                <label for="comuna">Comuna</label>
+                <input type="text" class="form-control" id="comuna" placeholder="Nombre de la Comuna" required>
               </div>
               <div class="form-group">
                 <label for="filter">Catástrofe</label>
@@ -43,6 +43,7 @@
                     <option value="1">Terremoto</option>
                     <option value="2">Incendio</option>
                     <option value="3">Aluvión</option>
+                    <option value="4">Tsunami</option>>
                 </select>
               </div>
               <div>
