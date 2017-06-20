@@ -16,6 +16,6 @@ class Actividad extends Model{
 	}
 
 	public function usuario(){
-		$this -> belongsTo(Usuario::class,'id_usuario');
+		$this -> belongsTo(User::class,'id_usuario');
 	}
 }
