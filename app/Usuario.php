@@ -43,4 +43,9 @@ class Usuario extends Model{
 		return $this->hasMany(Actividad::class,'id_usuario');
 	}
 
+	//oculta campo password
+	protected $hidden = [
+        'password', 'remember_token',
+    ];
+
 }
