@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Usuario extends Model{
 	protected $table = 'usuarios';
 
-	protected $fillable = ['usuario','password','run','email','telefono','activo','visible'];
+	protected $fillable = ['usuario','password','run','email','telefono','tipo_usuario','activo','visible'];
 
 	public function historiales(){
 		return $this->hasMany(Historial::class,'id_usuario');
