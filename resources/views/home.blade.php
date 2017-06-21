@@ -21,7 +21,7 @@
             <!-- Brand -->
             <div class="brand-name-wrapper">
                 <a class="navbar-brand" href="#">
-                    #ArgentinaVota
+                    ONEMI EMERGENCIAS
                 </a>
             </div>
 
@@ -49,22 +49,22 @@
     <div class="side-menu-container">
         <ul class="nav navbar-nav">
 
-            <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span>Candidatos</a></li>
-            <li class="active"><a href="#"><span></span>Propuestas</a></li>
-            <li class="active"><a href="#"><span></span>Quejas</a></li>
+            <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span>Usuarios</a></li>
+            <li class="active"><a href="#"><span></span>Medidas</a></li>
+            <li class="active"><a href="{{ route('catastrofes.index') }}"><span></span>Catastrofes</a></li>
 
             <!-- Dropdown-->
             <li class="panel panel-default" id="dropdown">
                 <a data-toggle="collapse" href="#dropdown-lvl1">
-                    <span class="glyphicon glyphicon-user"></span> Adminitración <span class="caret"></span>
+                    <span class="glyphicon glyphicon-user"></span>Medidas<span class="caret"></span>
                 </a>
 
                 <!-- Dropdown level 1 -->
                 <div id="dropdown-lvl1" class="panel-collapse collapse">
                     <div class="panel-body">
                         <ul class="nav navbar-nav">
-                            <li><a href="#">Verificar Candidatos</a></li>
-                            <li><a href="#">Resetear Contraseñas</a></li>
+                            <li><a href="#">Medidas Solicitadas</a></li>
+                            <li><a href="#">Medidas Aprobadas</a></li>
                         </ul>
                     </div>
                 </div>

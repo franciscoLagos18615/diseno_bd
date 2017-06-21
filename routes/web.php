@@ -20,6 +20,7 @@ Route::get('view', function(){
 	return view('index');
 });
 
+Route::resource('catastrofes','CatastrofeController');
 
 Auth::routes();
 
@@ -27,11 +28,3 @@ Route::get('/home', function () {
     return view('home');
 });
 
-
-Route::get('/addCatastrofe',function(){
-	return view('agregarCatastrofe');
-});
-
-Route::get('/menuInicio',function(){
-	return view('menuPrincipalG');
-});
