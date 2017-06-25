@@ -15,7 +15,7 @@ class CreateElementosTable extends Migration
     {
         Schema::create('elementos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
+            $table->string('nombre',15);
             $table->integer('cantidad');
                 
             $table->integer('id_recoleccion')->unsigned();

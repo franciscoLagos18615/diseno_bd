@@ -16,14 +16,14 @@ class CreateVoluntariadosTable extends Migration
         Schema::create('voluntariados', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_usuario_valida')->nullable();
-            $table->string('nombre_medida');
+            $table->string('nombre_medida',15);
             $table->date('fecha_inicio');
             $table->date('fecha_termino');
             $table->decimal('avance');
-            $table->string('perfil_voluntario');
+            $table->string('perfil_voluntario',20);
             $table->integer('personas');
-            $table->string('tipo_trabajo');
-            $table->string('direccion')->nullable();
+            $table->string('tipo_trabajo',20);
+            $table->string('direccion',50)->nullable();
             $table->boolean('valida');
 
             $table->foreign('id_usuario_valida')->references('id')->on('users')->onDelete('cascade');

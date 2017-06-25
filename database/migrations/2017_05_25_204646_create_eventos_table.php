@@ -17,11 +17,11 @@ class CreateEventosTable extends Migration
 
             $table->increments('id');
             $table->integer('id_usuario_valida')->unsigned();
-            $table->string('nombre_medida');
+            $table->string('nombre_medida',25);
             $table->date('fecha_inicio');
             $table->date('fecha_termino');
             $table->decimal('avance');
-            $table->string('direccion');
+            $table->string('direccion',50);
             $table->time('hora');
             $table->integer('meta');
             $table->integer('recaudacion_actual');

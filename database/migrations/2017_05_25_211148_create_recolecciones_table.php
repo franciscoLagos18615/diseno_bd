@@ -16,13 +16,13 @@ class CreateRecoleccionesTable extends Migration
         Schema::create('recolecciones', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_usuario_valida');
-            $table->string('nombre_medida');
+            $table->string('nombre_medida',15);
             $table->date('fecha_inicio');
             $table->date('fecha_termino');
             $table->decimal('avance');
             $table->integer('elementos_necesarios');
             $table->string('perfil_voluntario');
-            $table->string('direccion');
+            $table->string('direccion',50);
             $table->boolean('valida');
 
 

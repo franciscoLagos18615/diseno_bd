@@ -16,7 +16,7 @@ class CreateApoyosEconomicosTable extends Migration
         Schema::create('apoyos_economicos', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('nombre_medida');
+            $table->string('nombre_medida',15);
             $table->date('fecha_inicio');
             $table->date('fecha_termino');
             $table->decimal('avance');
