@@ -29,5 +29,10 @@
 </div>
 
 <div class="form-group">
+	{!! Form::hidden('id_catastrofe', $_GET["id"]) !!}
+</div>
+
+
+<div class="form-group">
 	{!! Form::submit('ENVIAR', ['class' => 'btn btn-primary']) !!}
 </div>

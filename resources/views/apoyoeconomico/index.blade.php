@@ -46,9 +46,9 @@
 
 						</td>
 
-						<td>
+<!-- 						<td>
 							<a href="{{ route('apoyoeconomico.show', $catastrofe->id) }}" class="btn btn-link">Ver detalles</a>
-						</td>
+						</td> -->
 <!-- 						<td>
 							<a href="{{ route('apoyoeconomico.create', $catastrofe->id) }}" class="btn btn-link">Agregar Recoleccion</a>
 						</td>

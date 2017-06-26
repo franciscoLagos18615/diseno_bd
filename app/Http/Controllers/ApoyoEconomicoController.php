@@ -37,7 +37,7 @@ class ApoyoEconomicoController extends Controller
 //         -> select('cuentas_banco.*')         
 //         ->get();
 
-		$comentarios = DB::table(DB::raw('users, comentarios, muros, apoyos_economicos WHERE comentarios.id_muro = muros.id AND apoyos_economicos.id_muro = muros.id AND apoyos_economicos.id='.$id.' AND users.id = comentarios.id_usuario'))
+		$comentarios = DB::table(DB::raw('users, comentarios, muros, apoyos_economicos WHERE comentarios.id_muro = muros.id AND apoyos_economicos.id_muro = muros.id AND apoyos_economicos.id='.$id.' AND users.id = comentarios.id_usuario order by comentarios.created_at desc'))
 		->select(DB::raw('comentarios.*, users.usuario, users.email'))
 		->get();
 

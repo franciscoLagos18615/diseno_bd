@@ -32,16 +32,16 @@
 							<a href="{{ route('recolecciones.show', $catastrofe->id) }}" class="btn btn-link">Ver detalles</a>
 						</td>c
 						<td>
-							<a href="{{ route('recolecciones.create', $catastrofe->id) }}" class="btn btn-link">Agregar Recoleccion</a>
+							<a href="{{ route('recolecciones.create', 'id='.$catastrofe->id) }}" class="btn btn-link">Agregar Recoleccion</a>
 						</td>
 						<td>
-							<a href="{{ route('recolecciones.create', $catastrofe->id) }}" class="btn btn-link">Agregar Apoyo Economico</a>
+							<a href="{{ route('apoyoeconomico.create', 'id='.$catastrofe->id) }}" class="btn btn-link">Agregar Apoyo Economico</a>
 						</td>
 						<td>
-							<a href="{{ route('recolecciones.create', $catastrofe->id) }}" class="btn btn-link">Agregar Evento</a>
+							<a href="{{ route('eventos.create', 'id='.$catastrofe->id) }}" class="btn btn-link">Agregar Evento</a>
 						</td>
 						<td>
-							<a href="{{ route('recolecciones.create', $catastrofe->id) }}" class="btn btn-link">Agregar voluntariado</a>
+							<a href="{{ route('voluntariados.create', 'id='.$catastrofe->id) }}" class="btn btn-link">Agregar voluntariado</a>
 						</td>
 				</tr>
 				@endforeach

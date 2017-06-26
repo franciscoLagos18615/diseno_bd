@@ -44,8 +44,11 @@ class RecoleccionController extends Controller
 		$recoleccion->perfil_voluntario = $request->perfil_voluntario;
 		$recoleccion->valida = 'false';
 		$recoleccion->id_usuario = Auth::user()->id;
-		$recoleccion->id_catastrofe = 3;
-		$recoleccion->id_muro=3;
+		$recoleccion->id_usuario_valida = Auth::user()->id;
+		$recoleccion->avance=0;
+		$recoleccion->id_catastrofe = $request->id;
+		$muro = new Muro;
+		$muro->save();
 
 
 
