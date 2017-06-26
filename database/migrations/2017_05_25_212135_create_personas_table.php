@@ -16,9 +16,9 @@ class CreatePersonasTable extends Migration
         Schema::create('personas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('run');
-            $table->string('nombre');
-            $table->string('apellido_paterno');
-            $table->string('apellido_materno');
+            $table->string('nombre',20);
+            $table->string('apellido_paterno',20);
+            $table->string('apellido_materno',20);
 
             $table->integer('id_recoleccion')->unsigned();
             $table->foreign('id_recoleccion')->references('id')->on('recolecciones')->onDelete('cascade');

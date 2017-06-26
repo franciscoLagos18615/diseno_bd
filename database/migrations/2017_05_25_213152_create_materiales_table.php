@@ -15,7 +15,7 @@ class CreateMaterialesTable extends Migration
     {
         Schema::create('materiales', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
+            $table->string('nombre',15);
             $table->integer('cantidad');
 
             $table->integer('id_recoleccion')->unsigned();
