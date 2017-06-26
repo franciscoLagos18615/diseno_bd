@@ -15,7 +15,7 @@ class CreateObjetivosDeAyudaTable extends Migration
     {
         Schema::create('objetivos_de_ayuda', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('descripcion');
+            $table->string('descripcion',100);
 
             $table->integer('id_recoleccion')->unsigned();
             $table->foreign('id_recoleccion')->references('id')->on('recolecciones')->onDelete('cascade');

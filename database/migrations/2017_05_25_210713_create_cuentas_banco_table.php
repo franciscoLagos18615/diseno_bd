@@ -16,7 +16,7 @@ class CreateCuentasBancoTable extends Migration
         Schema::create('cuentas_banco', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('numero_cuenta');
-            $table->string('banco');
+            $table->string('banco',20);
             $table->integer('tipo_cuenta');
             $table->integer('run');
             $table->rememberToken();
