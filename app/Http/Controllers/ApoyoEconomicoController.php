@@ -95,6 +95,23 @@ class ApoyoEconomicoController extends Controller
 		return redirect()->route('apoyoeconomico.index')->with('info', 'La catastrofe fue actualizada');
 	}
 
-		
+		public function destroy($id)
+	{
+		$product = ApoyoEconomico::find($id);
+		$product->delete();
+
+		return back()->with('info', 'El apoyo economico fue eliminado.');
+	}	
+
+
+		public function update($id)
+	{
+
+		DB::table('apoyos_economicos')
+		->where('apoyos_economicos.id','=',$id)
+		->update(['valida'=>true]);
+
+		return redirect()->route('medidasgobierno.index')->with('info', 'La medida fue activada.');
+	}
     
 }

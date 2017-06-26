@@ -8,6 +8,7 @@ use App\Voluntariado;
 use App\Muro;
 use App\Http\Requests\VoluntariadoRequest;
 use Auth;
+use DB;
 
 class VoluntariadoController extends Controller
 {
@@ -55,6 +56,24 @@ class VoluntariadoController extends Controller
 		$voluntariado->save();
 
 		return redirect()->route('recolecciones.index')->with('info', 'El voluntariado fue añadido');
+	}
+
+		public function destroy($id)
+	{
+		$product = Voluntariado::find($id);
+		$product->delete();
+
+		return redirect()->route('medidasgobierno.index')->with('info', 'El elemento fue eliminado.');
+	}
+
+		public function update($id)
+	{
+
+		DB::table('voluntariados')
+		->where('voluntariados.id','=',$id)
+		->update(['valida'=>true]);
+
+		return redirect()->route('medidasgobierno.index')->with('info', 'La medida fue activada.');
 	}
 
     

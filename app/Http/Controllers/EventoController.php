@@ -9,6 +9,7 @@ use App\Muro;
 use App\Http\Requests\CatastrofeRequest;
 use App\Http\Requests\EventoRequest;
 use Auth;
+use DB;
 
 class EventoController extends Controller
 {
@@ -64,7 +65,17 @@ class EventoController extends Controller
 		$product = Evento::find($id);
 		$product->delete();
 
-		return back()->with('info', 'El evento fue eliminado.');
+		return redirect()->route('medidasgobierno.index')->with('info', 'El Evento fue eliminado');
+	}
+
+		public function update($id)
+	{
+
+		DB::table('eventos')
+		->where('eventos.id','=',$id)
+		->update(['valida'=>true]);
+
+		return redirect()->route('medidasgobierno.index')->with('info', 'El evento ha sido activado.');
 	}
 
 }

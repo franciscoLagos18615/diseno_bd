@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Catastrofe;
 use App\Recoleccion;
 use App\Muro;
+use DB;
 use App\Http\Requests\CatastrofeRequest;
 use App\Http\Requests\RecoleccionRequest;
 use Auth;
@@ -54,6 +55,23 @@ class RecoleccionController extends Controller
 		return redirect()->route('recolecciones.index')->with('info', 'La catastrofe fue actualizada');
 	}
 
+		public function destroy($id)
+	{
+		$product = Recoleccion::find($id);
+		$product->delete();
+
+		return redirect()->route('medidasgobierno.index')->with('info', 'El elemento fue eliminado.');
+	}
+
+		public function update($id)
+	{
+
+		DB::table('recolecciones')
+		->where('recolecciones.id','=',$id)
+		->update(['valida'=>true]);
+
+		return redirect()->route('medidasgobierno.index')->with('info', 'La medida fue activada.');
+	}
 		
     
 }
