@@ -36,13 +36,31 @@
 						<strong>{{ $recoleccion->elementos_necesarios }}</strong>
 						</td>
 						<td>
-							<a href="{{ route('recolecciones.destroy', $recoleccion->id) }}" class="btn btn-link">Eliminar recoleccion</a>
+							<form action="{{ route('recolecciones.destroy', $recoleccion->id) }}" method="POST">
+
+								{{ csrf_field() }}
+								<input type="hidden" name="_method" value="DELETE">
+								<button class="btn btn-link">Eliminar Medida</button>
+							</form>
+						</td>
+
+						<td>
+							{!! Form::model($recoleccion, ['route' => ['recolecciones.update', $recoleccion->id], 'method' => 'PUT']) !!}
+
+								<div class="form-group">
+								{!! Form::submit('Activar Medida', ['class' => 'btn btn-primary']) !!}
+								</div>
+
+							{!! Form::close() !!}
 						</td>
 						<td>
-							<a href="{{ route('elementos.create', 'id='.$recoleccion->id) }}" class="btn btn-link">Activar Medida</a>
-						</td>
-						<td>
-							<a href="{{ route('elementos.create', 'id='.$recoleccion->id) }}" class="btn btn-link">Bloquear Usuario</a>
+							{!! Form::model($recoleccion, ['route' => ['medidasgobierno.update', $recoleccion->id_usuario], 'method' => 'PUT']) !!}
+
+								<div class="form-group">
+								{!! Form::submit('Bloquear usuario', ['class' => 'btn btn-primary']) !!}
+								</div>
+
+							{!! Form::close() !!}
 						</td>
 				</tr>
 				@endforeach
@@ -81,10 +99,31 @@
 						<strong>{{ $evento->meta }}</strong>
 						</td>
 						<td>
-							<a href="{{ route('catastrofes.show', $evento->id) }}" class="btn btn-link">Ver Catastrofe</a>
+							<form action="{{ route('eventos.destroy', $evento->id) }}" method="POST">
+
+								{{ csrf_field() }}
+								<input type="hidden" name="_method" value="DELETE">
+								<button class="btn btn-link">Eliminar Medida</button>
+							</form>
+						</td>
+
+						<td>
+							{!! Form::model($evento, ['route' => ['eventos.update', $evento->id], 'method' => 'PUT']) !!}
+
+								<div class="form-group">
+								{!! Form::submit('Activar Medida', ['class' => 'btn btn-primary']) !!}
+								</div>
+
+							{!! Form::close() !!}
 						</td>
 						<td>
-							<a href="{{ route('recolecciones.create', 'id='.$evento->id) }}" class="btn btn-link">Apoyar Medida</a>
+							{!! Form::model($evento, ['route' => ['medidasgobierno.update', $evento->id_usuario], 'method' => 'PUT']) !!}
+
+								<div class="form-group">
+								{!! Form::submit('Bloquear usuario', ['class' => 'btn btn-primary']) !!}
+								</div>
+
+							{!! Form::close() !!}
 						</td>
 				</tr>
 				@endforeach
@@ -127,10 +166,31 @@
 						<strong>{{ $voluntariado->meta }}</strong>
 						</td>
 						<td>
-							<a href="{{ route('recolecciones.show', $voluntariado->id) }}" class="btn btn-link">Ver Catastrofe</a>
+							<form action="{{ route('voluntariados.destroy', $voluntariado->id) }}" method="POST">
+
+								{{ csrf_field() }}
+								<input type="hidden" name="_method" value="DELETE">
+								<button class="btn btn-link">Eliminar Medida</button>
+							</form>
+						</td>
+
+						<td>
+							{!! Form::model($voluntariado, ['route' => ['voluntariados.update', $voluntariado->id], 'method' => 'PUT']) !!}
+
+								<div class="form-group">
+								{!! Form::submit('Activar Medida', ['class' => 'btn btn-primary']) !!}
+								</div>
+
+							{!! Form::close() !!}
 						</td>
 						<td>
-							<a href="{{ route('recolecciones.create', 'id='.$voluntariado->id) }}" class="btn btn-link">Apoyar Medida</a>
+							{!! Form::model($voluntariado, ['route' => ['medidasgobierno.update', $voluntariado->id_usuario], 'method' => 'PUT']) !!}
+
+								<div class="form-group">
+								{!! Form::submit('Bloquear usuario', ['class' => 'btn btn-primary']) !!}
+								</div>
+
+							{!! Form::close() !!}
 						</td>
 				</tr>
 				@endforeach
@@ -167,10 +227,31 @@
 						</td>
 						
 						<td>
-							<a href="{{ route('catastrofes.show', $apoyoeconomico->id_catastrofe) }}" class="btn btn-link">Ver Catastrofe</a>
+							<form action="{{ route('apoyoseconomicos.destroy', $apoyoeconomico->id) }}" method="POST">
+
+								{{ csrf_field() }}
+								<input type="hidden" name="_method" value="DELETE">
+								<button class="btn btn-link">Eliminar Medida</button>
+							</form>
+						</td>
+
+						<td>
+							{!! Form::model($apoyoeconomico, ['route' => ['apoyoseconomicos.update', $apoyoeconomico->id], 'method' => 'PUT']) !!}
+
+								<div class="form-group">
+								{!! Form::submit('Activar Medida', ['class' => 'btn btn-primary']) !!}
+								</div>
+
+							{!! Form::close() !!}
 						</td>
 						<td>
-							<a href="{{ route('recolecciones.create', 'id='.$apoyoeconomico->id_catastrofe) }}" class="btn btn-link">Apoyar Medida</a>
+							{!! Form::model($apoyoeconomico, ['route' => ['medidasgobierno.update', $apoyoeconomico->id_usuario], 'method' => 'PUT']) !!}
+
+								<div class="form-group">
+								{!! Form::submit('Bloquear usuario', ['class' => 'btn btn-primary']) !!}
+								</div>
+
+							{!! Form::close() !!}
 						</td>
 				</tr>
 				@endforeach

@@ -3,7 +3,6 @@
 @section('content')
 
 	<div class="col-sm-8">
-		
 		<h2>
 			{{ $catastrofe->region }}
 			<a href="{{ route('recolecciones.edit', $catastrofe->id) }}"" class="btn btn-default pull-right">Editar</a>

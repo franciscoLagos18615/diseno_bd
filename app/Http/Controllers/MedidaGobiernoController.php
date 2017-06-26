@@ -24,4 +24,15 @@ class MedidaGobiernoController extends Controller
 		return view('medidasgobierno.index', compact('recolecciones','voluntariados','eventos','apoyoseconomicos'));
 
 	}
+
+
+// BLOQUEAR USUARIO
+		public function update($id)
+	{
+		DB::table('users')
+		->where('users.id','=',$id)
+		->update(['activo'=>false]);
+
+		return redirect()->route('medidasgobierno.index')->with('info', 'El usuario ha sido bloqueado.');
+	}
 }
