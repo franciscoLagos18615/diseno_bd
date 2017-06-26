@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Catastrofe;
+use App\Comentario;
+use DB;
 use App\Http\Requests\CatastrofeRequest;
 
 class CatastrofeController extends Controller
@@ -19,7 +21,14 @@ class CatastrofeController extends Controller
 	public function show($id)
 	{
 		$catastrofe = Catastrofe::find($id);
-		return view('catastrofes.show', compact('catastrofe'));
+		
+
+		$comentarios = DB::table('comentarios')
+		->join('muros','comentarios.id_muro','=','muros.id')
+		->select('comentarios.id_usuario','comentarios.id','comentarios.descripcion')
+		->get();
+
+		return view('catastrofes.show', compact(['catastrofe','comentarios']));
 	}
 
 	public function create()
@@ -30,14 +39,11 @@ class CatastrofeController extends Controller
 	public function store(CatastrofeRequest $request)
 	{
 		$catastrofe = new Catastrofe;
-
 		$catastrofe->descripcion = $request->descripcion;
 		$catastrofe->region = $request->region;
 		$catastrofe->comuna = $request->comuna;
 		$catastrofe->id_usuario = 2;
-
 		$catastrofe->save();
-
 		return redirect()->route('catastrofes.index')->with('info', 'La catastrofe fue actualizada');
 	}
 	
