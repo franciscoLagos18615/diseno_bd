@@ -30,7 +30,15 @@ class CatastrofeController extends Controller
 		->select('comentarios.id_usuario','comentarios.id','comentarios.descripcion','comentarios.created_at')
 		->get();
 
-		return view('catastrofes.show', compact(['catastrofe','comentarios']));
+
+
+		$apoyos_economicos = DB::table(DB::raw('apoyos_economicos, catastrofes WHERE apoyos_economicos.id_catastrofe = catastrofes.id AND catastrofes.id='.$id))
+		->select('apoyos_economicos.*')
+		->paginate();
+		
+
+
+		return view('catastrofes.show', compact(['catastrofe','comentarios','apoyos_economicos']));
 	}
 
 	public function create()

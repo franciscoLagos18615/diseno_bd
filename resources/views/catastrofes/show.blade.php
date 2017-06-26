@@ -48,77 +48,84 @@
 		<!--Comentario en HTML -->
 		@include('catastrofes.fragment.aside')
 	</div>
-	<hr>
-	<div class="container">
-		<div class="col-md-12 col-xs-10 col-lg-12">
-
-		<form action="{{url('/catastrofes/1')}}" method="POST">
-	           {{csrf_field()}}
-	   
-	           <div class="form-group">
-	       	  <label for="descripcion">Write comment</label>
-	             <input class="form-control" name="descripcion" placeholder="Write comment" type="text">
-	           </div>
-	                  
-	           <input class="btn btn-primary" type="submit" value="Done">
-	           
-       </form>
-
-	<h3>as</h3>
-
-	<h3>List of comments</h3>
-	<p>{{$comentarios}}</p>
-	<hr>
 	
-
-
-
-	
-	    
-	    
-
-	        
-	    
-
-	
-
-		</div>
+<div class="col-sm-12">
+	<div class="panel panel-primary">
+		<div class="panel-heading">Apoyos Económicos</div>
 		
+		<table class="table table-hover table-striped">
+			<thead>
+				<tr>
+					<th width="20px">ID</th>
+					<th>Nombre medida</th>
+					<th>Avance</th>
+					<th>Fecha inicio</th>
+					<th>Fecha de término</th>
+					<th>Meta</th>
+					<th>Recaudación actual</th>
+					<th>Estado medida</th>
+					<th colspan="3">&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach($apoyos_economicos as $apoyo)	
+				<tr>
+						<td>{{ $apoyo->id }}</td>
+						<td>
+						<strong>{{ $apoyo->nombre_medida }}</strong>
+						</td>
+						<td>
+						<strong>{{ $apoyo->avance }}</strong>
+						</td>
+						<td>
+						<strong>{{ $apoyo->fecha_inicio }}</strong>
+						</td>
+						<td>
+						<strong>{{ $apoyo->fecha_termino }}</strong>
+						</td>
+						<td>
+						<strong>{{ $apoyo->meta }}</strong>
+						</td>
+						<td>
+						<strong>{{ $apoyo->recaudacion_actual }}</strong>
+						</td>
+						<td>
+						<?php if(!$apoyo->valida): ?>
+						<?php echo "<strong style='color:red;'> No aprobada </strong>"; ?>
+						<?php else: ?>
+						<?php echo "<strong style='color:green;'> Aprobada </strong>"; ?>
+						<?php endif ?>
+
+						</td>
+
+						<td>
+							<a href="{{ route('apoyoeconomico.show', $apoyo->id) }}" class="btn btn-link">Ver detalles</a>
+						</td>
+<!-- 						<td>
+							<a href="{{ route('apoyoeconomico.create', $catastrofe->id) }}" class="btn btn-link">Agregar Recoleccion</a>
+						</td>
+						<td>
+							<a href="{{ route('recolecciones.create', $catastrofe->id) }}" class="btn btn-link">Agregar Apoyo Economico</a>
+						</td>
+						<td>
+							<a href="{{ route('recolecciones.create', $catastrofe->id) }}" class="btn btn-link">Agregar Evento</a>
+						</td>
+						<td>
+							<a href="{{ route('recolecciones.create', $catastrofe->id) }}" class="btn btn-link">Agregar voluntariado</a>
+						</td> -->
+				</tr>
+				@endforeach
+			</tbody>
+		</table>
+		{!! $apoyos_economicos->render() !!}
 	</div>
+</div>
 
 
 
 
 
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
-				<h3>Comentarios </h3>
-			</div><!-- /col-sm-12 -->
-		</div><!-- /row -->
-<?php foreach($comentarios as $com): ?>
-		<div class="row">
-			<div class="col-sm-1">
-				<div class="thumbnail">
-					<img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
-				</div><!-- /thumbnail -->
-			</div><!-- /col-sm-1 -->
 
-			<div class="col-sm-9">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<strong>myusername <?php echo $com->id_usuario ?> </strong> <span class="text-muted">commented {{ floor((date('Y-m-d H:i:s') - $com->created_at)/(60*60*24) )    }} days ago </span> 
-					</div>
-					<div class="panel-body">
-						<?php echo $com->descripcion; ?>
-					</div><!-- /panel-body -->
-				</div><!-- /panel panel-default -->
-			</div><!-- /col-sm-5 -->
-		</div><!-- /row -->
-<?php endforeach; ?>
-	</div><!-- /container -->
-
-
-
+	
 @endsection
 
