@@ -49,7 +49,7 @@
     <div class="side-menu-container">
         <ul class="nav navbar-nav">
 
-            <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span>Usuarios</a></li>
+            <li class="active"><a href="{{ route('medidasgobierno.index') }}"><span class="glyphicon glyphicon-user"></span>Validar Medidas</a></li>
             <li class="panel panel-default" id="dropdown">
                 <a data-toggle="collapse" href="#dropdown-lvl1">
                     <span class="glyphicon glyphicon-user"></span>Medidas<span class="caret"></span>
@@ -60,8 +60,9 @@
                 <div id="dropdown-lvl1" class="panel-collapse collapse">
                     <div class="panel-body">
                         <ul class="nav navbar-nav">
-                            <li><a href="{{ route('medidas.index') }}">Tus medidas activas</a></li>
-                            <li><a href="{{ route('medidas.index') }}">Medidas activas</a></li>
+                            <li><a href="{{ route('medidas.index') }}">Tus Medidas Activas</a></li>
+                            <li><a href="{{ route('medidas.index') }}">Medidas Activas</a></li>
+                            <li><a href="{{ route('medidasgobierno.index') }}">Validar Medidas</a></li>
                         </ul>
                     </div>
                 </div>
