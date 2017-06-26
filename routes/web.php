@@ -35,6 +35,10 @@
  Route::resource('voluntariados','VoluntariadoController');
 
  Route::resource('medidas', 'MedidaController');
+
+ Route::resource('medidasgobierno','MedidaGobiernoController');
+
+ Route::resource('elementos', 'ElementoController');
  
  Auth::routes();
  

@@ -39,7 +39,7 @@
 							<a href="{{ route('catastrofes.show', $recoleccion->id_catastrofe) }}" class="btn btn-link">Ver Catastrofe</a>
 						</td>
 						<td>
-							<a href="{{ route('elementos.create', 'id='.$recoleccion->id) }}" class="btn btn-link">Añadir elementos</a>
+							<a href="{{ route('recolecciones.create', 'id='.$recoleccion->id) }}" class="btn btn-link">Apoyar Medida</a>
 						</td>
 				</tr>
 				@endforeach

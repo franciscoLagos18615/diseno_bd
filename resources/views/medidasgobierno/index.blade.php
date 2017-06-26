@@ -36,10 +36,13 @@
 						<strong>{{ $recoleccion->elementos_necesarios }}</strong>
 						</td>
 						<td>
-							<a href="{{ route('catastrofes.show', $recoleccion->id_catastrofe) }}" class="btn btn-link">Ver Catastrofe</a>
+							<a href="{{ route('recolecciones.destroy', $recoleccion->id) }}" class="btn btn-link">Eliminar recoleccion</a>
 						</td>
 						<td>
-							<a href="{{ route('elementos.create', 'id='.$recoleccion->id) }}" class="btn btn-link">Añadir elementos</a>
+							<a href="{{ route('elementos.create', 'id='.$recoleccion->id) }}" class="btn btn-link">Activar Medida</a>
+						</td>
+						<td>
+							<a href="{{ route('elementos.create', 'id='.$recoleccion->id) }}" class="btn btn-link">Bloquear Usuario</a>
 						</td>
 				</tr>
 				@endforeach

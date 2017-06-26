@@ -59,4 +59,12 @@ class EventoController extends Controller
 		return redirect()->route('recolecciones.index')->with('info', 'El Evento fue añadido');
 	}
 
+		public function destroy($id)
+	{
+		$product = Evento::find($id);
+		$product->delete();
+
+		return back()->with('info', 'El evento fue eliminado.');
+	}
+
 }
