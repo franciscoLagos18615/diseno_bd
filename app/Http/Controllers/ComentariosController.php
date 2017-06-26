@@ -12,7 +12,7 @@ class ComentariosController extends Controller
     	$comentario = new Comentario();
     	$comentario-> descripcion=$request->descripcion;
     	$comentario-> id_usuario=Auth::user()->id;
-    	$comentario-> id_muro=1;
+    	$comentario-> id_muro=$request-> id_muro;
     	$comentario-> created_at=time();
     	$comentario->save();
     	return back();

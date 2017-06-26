@@ -9,6 +9,7 @@ use App\Cuenta_banco;
 use App\Muro;
 use App\Http\Requests\CatastrofeRequest;
 use App\Http\Requests\ApoyoEconomicoRequest;
+use DB;
 use Auth;
 
 class ApoyoEconomicoController extends Controller
@@ -18,7 +19,28 @@ class ApoyoEconomicoController extends Controller
 	{
 		$catastrofe = Apoyo_Economico::find($id);
 
-		return view('apoyoeconomico.show', compact('catastrofe'));
+		$cuenta = DB::table('cuentas_banco')
+		->join('apoyos_economicos','apoyos_economicos.id_cuenta_banco','=','cuentas_banco.id')
+		->where('apoyos_economicos.id','=',$id)
+		->select('cuentas_banco.*')
+		->get();
+
+
+
+		
+
+
+// $comentarios = DB::table('comentarios')
+// 		->join('muros','comentarios.id_muro','=','muros.id')
+//         ->join(	'apoyos_economicos','apoyos_economicos.id_muro','=', 'muro.id')
+//         ->where('apoyos_economicos.id','=',$id)
+//         -> select('cuentas_banco.*')         
+//         ->get();
+
+		$comentarios = DB::table(DB::raw('comentarios, muros, apoyos_economicos WHERE comentarios.id_muro = muros.id AND apoyos_economicos.id_muro = muros.id AND apoyos_economicos.id='.$id))
+		->get();
+
+		return view('apoyoeconomico.show', compact('catastrofe','cuenta','comentarios'));
 	}
 
 	public function index()
@@ -28,9 +50,17 @@ class ApoyoEconomicoController extends Controller
 
 	}
 
-		public function create()
+	public function create()
 	{
 		return view('apoyoeconomico.create');
+	}
+
+
+	public function edit($id)
+	{
+		$catastrofe = Catastrofe::find($id);
+		$q=1;
+		return view('catastrofes.edit', compact('catastrofe','q'));
 	}
 
 	public function store(ApoyoEconomicoRequest $request)
