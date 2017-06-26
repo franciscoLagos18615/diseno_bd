@@ -27,6 +27,7 @@
  Route::resource('catastrofes','CatastrofeController');
  
  Route::resource('recolecciones','RecoleccionController');
+  Route::resource('donaciones','DonacionController');
 
  Route::resource('apoyoeconomico','ApoyoEconomicoController');
  

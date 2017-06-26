@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<div class="col-sm-">
+	<div class="col-sm-12">
 		
 		<h2>
 			Listado de Recolecciones
@@ -92,7 +92,7 @@
 
 		
 		<div class="row">
-			<div class="col-sm-8">
+			<div class="col-sm-12">
 				<h2>
 			Listado de Voluntariados
 		</h2>
@@ -167,7 +167,7 @@
 							<a href="{{ route('catastrofes.show', $apoyoeconomico->id_catastrofe) }}" class="btn btn-link">Ver Catastrofe</a>
 						</td>
 						<td>
-							<a href="{{ route('recolecciones.create', 'id='.$apoyoeconomico->id_catastrofe) }}" class="btn btn-link">Apoyar Medida</a>
+							<a href="{{ route('donaciones.create', 'id='.$apoyoeconomico->id) }}" class="btn btn-link">Apoyar Medida</a>
 						</td>
 				</tr>
 				@endforeach
