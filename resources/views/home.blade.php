@@ -50,8 +50,22 @@
         <ul class="nav navbar-nav">
 
             <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span>Usuarios</a></li>
-            <li class="active"><a href="#"><span></span>asd</a></li>
-            <li class="active"><a href="#"><span></span>asda</a></li>
+            <li class="panel panel-default" id="dropdown">
+                <a data-toggle="collapse" href="#dropdown-lvl1">
+                    <span class="glyphicon glyphicon-user"></span>Medidas<span class="caret"></span>
+                </a>
+
+                <!-- Dropdown level 1 -->
+
+                <div id="dropdown-lvl1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <ul class="nav navbar-nav">
+                            <li><a href="{{ route('medidas.index') }}">Tus medidas activas</a></li>
+                            <li><a href="{{ route('medidas.index') }}">Medidas activas</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
 
             <!-- Dropdown-->
             <li class="panel panel-default" id="dropdown">

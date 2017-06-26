@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Evento extends Model{
 	protected $table = 'eventos';
 
-	protected $fillable = ['nombre_medida','fecha_inicio','fecha_termino','direccion','hora','meta','id_usuario_valida','valida','id_cuenta_banco','id_catastrofe','id_usuario','id_muro'];
+	protected $fillable = ['nombre_medida','fecha_inicio','fecha_termino','direccion','hora','meta','id_usuario_valida','valida','recaudacion_actual','id_catastrofe','id_usuario','id_muro'];
 
 	public function actividades(){
 		return $this -> hasMany(Actividad::class,'id_evento');

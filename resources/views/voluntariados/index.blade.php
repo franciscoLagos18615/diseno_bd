@@ -5,8 +5,7 @@
 	<div class="col-sm-8">
 		
 		<h2>
-			Listado de Recolecciones
-			<a href="{{ route('recolecciones.create') }}" class="btn btn-primary pull-right">Añadir Catastrofe</a>
+			Listado de Catastrofes
 		</h2>
 		@include('recolecciones.fragment.info')
 		<table class="table table-hover table-striped">
@@ -30,9 +29,9 @@
 						</td>
 						<td>
 							<a href="{{ route('recolecciones.show', $catastrofe->id) }}" class="btn btn-link">Ver detalles</a>
-						</td>c
+						</td>
 						<td>
-							<a href="{{ route('recolecciones.create', $catastrofe->id) }}" class="btn btn-link">Agregar Recoleccion</a>
+							<a href="{{ route('recolecciones.create', 'id='.$catastrofe->id) }}" class="btn btn-link">Agregar Recoleccion</a>
 						</td>
 						<td>
 							<a href="{{ route('recolecciones.create', $catastrofe->id) }}" class="btn btn-link">Agregar Apoyo Economico</a>
@@ -56,7 +55,5 @@
 	</div>
 
 @endsection
-
-
 
 

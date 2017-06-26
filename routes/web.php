@@ -27,8 +27,14 @@
  Route::resource('catastrofes','CatastrofeController');
  
  Route::resource('recolecciones','RecoleccionController');
+
  Route::resource('apoyoeconomico','ApoyoEconomicoController');
  
+ Route::resource('eventos', 'EventoController');
+
+ Route::resource('voluntariados','VoluntariadoController');
+
+ Route::resource('medidas', 'MedidaController');
  
  Auth::routes();
  
