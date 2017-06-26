@@ -8,8 +8,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <title>{{ config('app.name', 'Onemi') }}</title>
+    <link href="{{ asset('css/styleHome.css') }}" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -29,7 +29,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Onemi
                     </a>
                 </div>
 
@@ -75,6 +75,12 @@
     </div>
 
     <!-- Scripts -->
+    <script>$(document).ready(function(){
+   $('[data-toggle="offcanvas"]').click(function(){
+       $("#navigation").toggleClass("hidden-xs");
+   });
+});
+</script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

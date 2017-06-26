@@ -227,7 +227,7 @@
 						</td>
 						
 						<td>
-							<form action="{{ route('apoyoseconomicos.destroy', $apoyoeconomico->id) }}" method="POST">
+							<form action="{{ route('apoyoeconomico.destroy', $apoyoeconomico->id) }}" method="POST">
 
 								{{ csrf_field() }}
 								<input type="hidden" name="_method" value="DELETE">
@@ -236,7 +236,7 @@
 						</td>
 
 						<td>
-							{!! Form::model($apoyoeconomico, ['route' => ['apoyoseconomicos.update', $apoyoeconomico->id], 'method' => 'PUT']) !!}
+							{!! Form::model($apoyoeconomico, ['route' => ['apoyoeconomico.update', $apoyoeconomico->id], 'method' => 'PUT']) !!}
 
 								<div class="form-group">
 								{!! Form::submit('Activar Medida', ['class' => 'btn btn-primary']) !!}
