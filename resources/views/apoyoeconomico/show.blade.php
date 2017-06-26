@@ -89,12 +89,6 @@
 
 	           
        </form>
-
-	<h3>as</h3>
-
-	<h3>List of comments</h3>
-	<p>{{$comentarios}}</p>
-	<hr>
 		</div>
 		
 </div>
@@ -116,7 +110,7 @@
 			<div class="col-sm-9">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<strong>myusername <?php echo $com->id_usuario ?> </strong> <span class="text-muted">commented {{ floor((date('Y-m-d H:i:s') - $com->created_at)/(60*60*24) )    }} days ago </span> 
+						<strong>{{$com->usuario}}</strong> - {{$com->email}} <span class="text-muted">comentado a las: {{ $com->created_at }} </span> 
 					</div>
 					<div class="panel-body">
 						<?php echo $com->descripcion; ?>
