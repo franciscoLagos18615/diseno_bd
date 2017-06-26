@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 
 class Cuenta_banco extends Model{
-	protected $table = 'cuentas_bancos';
+	protected $table = 'cuentas_banco';
 
-	protected $fillable = ['numero_cuenta','banco'´,'tipo_cuenta','rut'];
+	protected $fillable = ['numero_cuenta','banco','tipo_cuenta','rut'];
 
 	public function apoyo_economico(){
 		return $this -> hasOne(Apoyo_economico::class,'id_cuenta_banco');

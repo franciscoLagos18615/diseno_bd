@@ -5,8 +5,8 @@
 	<div class="col-sm-8">
 		
 		<h2>
-			Listado de Recolecciones
-			<a href="{{ route('recolecciones.create') }}" class="btn btn-primary pull-right">Añadir Catastrofe</a>
+			Listado de ApoyosEconomicos
+			<a href="{{ route('apoyoeconomico.create') }}" class="btn btn-primary pull-right">Añadir Catastrofe</a>
 		</h2>
 		@include('recolecciones.fragment.info')
 		<table class="table table-hover table-striped">
@@ -23,16 +23,16 @@
 				<tr>
 						<td>{{ $catastrofe->id }}</td>
 						<td>
-						<strong>{{ $catastrofe->region }}</strong>
+						<strong>{{ $catastrofe->nombre_medida }}</strong>
 						</td>
 						<td>
 						<strong>{{ $catastrofe->comuna }}</strong>
 						</td>
 						<td>
-							<a href="{{ route('recolecciones.show', $catastrofe->id) }}" class="btn btn-link">Ver detalles</a>
-						</td>c
+							<a href="{{ route('apoyoeconomico.show', $catastrofe->id) }}" class="btn btn-link">Ver detalles</a>
+						</td>
 						<td>
-							<a href="{{ route('recolecciones.create', $catastrofe->id) }}" class="btn btn-link">Agregar Recoleccion</a>
+							<a href="{{ route('apoyoeconomico.create', $catastrofe->id) }}" class="btn btn-link">Agregar Recoleccion</a>
 						</td>
 						<td>
 							<a href="{{ route('recolecciones.create', $catastrofe->id) }}" class="btn btn-link">Agregar Apoyo Economico</a>

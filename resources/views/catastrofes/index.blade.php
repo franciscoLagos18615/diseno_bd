@@ -4,6 +4,8 @@
 
 	<div class="col-sm-8">
 		
+
+
 		<h2>
 			Listado de Catastrofes
 			<a href="{{ route('catastrofes.create') }}" class="btn btn-primary pull-right">Añadir Catastrofe</a>
@@ -30,9 +32,21 @@
 						</td>
 						<td>
 							<a href="{{ route('catastrofes.show', $catastrofe->id) }}" class="btn btn-link">Ver detalles</a>
-						</td>c
+						</td>
 						<td>
 							<a href="{{ route('catastrofes.edit', $catastrofe->id) }}" class="btn btn-link">Editar</a>
+						</td>
+						<td>
+						<div class="dropdown">
+						  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Agregar Medida
+						  <span class="caret"></span></button>
+						  <ul class="dropdown-menu">
+							<li><a href="{{ route('apoyoeconomico.create', 'id='.$catastrofe->id) }}" class="btn btn-link">Apoyo Economico</a></li>
+						    <li><a href="{{ route('apoyoeconomico.create', 'id='.$catastrofe->id) }}" class="btn btn-link">Recolección</a></li>
+						    <li><a href="{{ route('apoyoeconomico.create', 'id='.$catastrofe->id) }}" class="btn btn-link">Evento</a></li>
+						  </ul>
+						</div>
+
 						</td>
 						<td>
 							<form action="{{ route('catastrofes.destroy', $catastrofe->id) }}" method="POST">
