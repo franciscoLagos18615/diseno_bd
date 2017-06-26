@@ -25,6 +25,8 @@ Route::get('view', function(){
 
 Route::resource('catastrofes','CatastrofeController');
 
+Route::resource('recolecciones','RecoleccionController');
+
 Auth::routes();
 
 Route::get('/home', function () {

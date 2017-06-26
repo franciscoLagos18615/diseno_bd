@@ -21,7 +21,7 @@
             <!-- Brand -->
             <div class="brand-name-wrapper">
                 <a class="navbar-brand" href="#">
-                    ONEMI EMERGENCIAS
+                    {{ Auth::user()->name }}
                 </a>
             </div>
 
@@ -50,21 +50,22 @@
         <ul class="nav navbar-nav">
 
             <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span>Usuarios</a></li>
-            <li class="active"><a href="#"><span></span>Medidas</a></li>
-            <li class="active"><a href="{{ route('catastrofes.index') }}"><span></span>Catastrofes</a></li>
+            <li class="active"><a href="#"><span></span>asd</a></li>
+            <li class="active"><a href="#"><span></span>asda</a></li>
 
             <!-- Dropdown-->
             <li class="panel panel-default" id="dropdown">
                 <a data-toggle="collapse" href="#dropdown-lvl1">
-                    <span class="glyphicon glyphicon-user"></span>Medidas<span class="caret"></span>
+                    <span class="glyphicon glyphicon-user"></span>Catastrofes<span class="caret"></span>
                 </a>
 
                 <!-- Dropdown level 1 -->
+
                 <div id="dropdown-lvl1" class="panel-collapse collapse">
                     <div class="panel-body">
                         <ul class="nav navbar-nav">
-                            <li><a href="#">Medidas Solicitadas</a></li>
-                            <li><a href="#">Medidas Aprobadas</a></li>
+                            <li><a href="{{ route('recolecciones.index') }}">Catastrofes Usuario</a></li>
+                            <li><a href="{{ route('catastrofes.index') }}">Catastrofes Gobierno</a></li>
                         </ul>
                     </div>
                 </div>
@@ -79,6 +80,7 @@
     <div class="container-fluid">
         <div class="side-body">
         
+        asdasdas
         </div>
     </div>
 </div>

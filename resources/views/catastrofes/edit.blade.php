@@ -5,7 +5,7 @@
 	<div class="col-sm-8">
 		
 		<h2>
-		Editar Producto
+		Editar Producto > {{ Auth::user()->usuario }}
 			<a href="{{ route('catastrofes.index') }}"" class="btn btn-default pull-right">Editar</a>
 		</h2>
 

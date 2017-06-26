@@ -6,7 +6,11 @@
 		
 		<h2>
 		CREAR CATASTROFEdd
+		{{ $catastrofe->id }}
 			<a href="{{ route('catastrofes.index') }}"" class="btn btn-default pull-right">Regresar</a>
+		}
+		}
+		}
 		</h2>
 
 		@include('catastrofes.fragment.error')
