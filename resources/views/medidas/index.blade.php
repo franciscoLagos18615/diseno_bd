@@ -134,8 +134,49 @@
 			</tbody>
 		</table>
 		{!! $eventos->render() !!}
+
+		<h2>
+			Listado de Apoyos Economicos
+		</h2>
+		<table class="table table-hover table-striped">
+			<thead>
+				<tr>
+					<th width="20px">ID</th>
+					<th>Nombre Medida</th>
+					<th>Fecha de inicio</th>
+					<th>Fecha de termino</th>
+					<th>Elementos Necesarios</th>
+					<th colspan="3">&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach($apoyoseconomicos->items() as $apoyoeconomico)	
+				<tr>
+						<td>{{ $apoyoeconomico->id }}</td>
+						<td>
+						<strong>{{ $apoyoeconomico->nombre_medida }}</strong>
+						</td>
+						<td>
+						<strong>{{ $apoyoeconomico->fecha_inicio }}</strong>
+						</td>
+						<td>
+						<strong>{{ $apoyoeconomico->fecha_termino }}</strong>
+						</td>
+						
+						<td>
+							<a href="{{ route('catastrofes.show', $apoyoeconomico->id_catastrofe) }}" class="btn btn-link">Ver Catastrofe</a>
+						</td>
+						<td>
+							<a href="{{ route('recolecciones.create', 'id='.$apoyoeconomico->id_catastrofe) }}" class="btn btn-link">Apoyar Medida</a>
+						</td>
+				</tr>
+				@endforeach
+			</tbody>
+		</table>
+		{!! $eventos->render() !!}
 	</div>
-			</div>
+	</div>
+	</div>
 		</div>
 
 @endsection
