@@ -16,8 +16,11 @@ class EventoController extends Controller
 
 	public function show($id)
 	{
-		$catastrofe = Catastrofe::find($id);
-		return view('eventos.create', compact('catastrofe'));
+		$catastrofe = Evento::find($id);
+		$comentarios = DB::table(DB::raw('users, comentarios, muros, eventos WHERE comentarios.id_muro = muros.id AND eventos.id_muro = muros.id AND eventos.id='.$id.' AND users.id = comentarios.id_usuario order by comentarios.created_at desc'))
+		->select(DB::raw('comentarios.*, users.usuario, users.email'))
+		->get();
+		return view('eventos.show', compact('catastrofe','comentarios'));
 	}
 
 	public function index()

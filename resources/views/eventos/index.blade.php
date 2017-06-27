@@ -68,6 +68,9 @@
 						<?php echo "<strong style='color:green;'> Aprobada </strong>"; ?>
 						<?php endif ?>
 						</td>
+						<td>
+							<a href="{{ route('eventos.show', $catastrofe->id) }}" class="btn btn-link">Ver detalles</a>
+						</td>
 
 <!-- 						<td>
 							<a href="{{ route('apoyoeconomico.show', $catastrofe->id) }}" class="btn btn-link">Ver detalles</a>
