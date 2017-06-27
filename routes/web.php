@@ -44,6 +44,8 @@
  Route::resource('elementos', 'ElementoController');
 
  Route::resource('actividades', 'ActividadController');
+
+ Route::resource('personas','PersonaController');
  
  Auth::routes();
  
