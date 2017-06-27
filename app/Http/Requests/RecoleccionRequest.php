@@ -28,11 +28,11 @@ class RecoleccionRequest extends FormRequest
             'fecha_inicio' => 'required',
             'fecha_termino' => 'required',
             'direccion' => 'required',
-            'elementos_necesarios' => 'required',
+            'elementos_necesarios' => 'required|integer',
             'perfil_voluntario' => 'required',
         ];
     }
 
 
-    'bail|required|unique:posts|max:255'
+    
 }

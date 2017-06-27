@@ -25,7 +25,7 @@ class ElementoRequest extends FormRequest
     {
         return [
             'nombre' => 'required',
-            'cantidad' => 'required',
+            'cantidad' => 'required|integer',
         ];
 
         

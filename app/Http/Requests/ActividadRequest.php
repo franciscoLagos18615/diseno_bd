@@ -25,10 +25,7 @@ class ActividadRequest extends FormRequest
     {
         return [
             'descripcion' => 'required',
-            'recaudacion' => 'required'
+            'recaudacion' => 'required|integer'
         ];
-
-
-
     }
 }
