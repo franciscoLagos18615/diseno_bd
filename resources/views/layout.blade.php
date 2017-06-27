@@ -77,7 +77,7 @@
 
 
 
-    <div class="container-fluid display-table">
+    <div class="container-fluid display-table" style="padding-left: 0;">
         <div class="row display-table-row">
             <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
                 <div class="logo">
@@ -106,12 +106,7 @@
 
         </div>
 
-    </div>
-
-
-
-
-        
+    </div> 
     </div>
 
     <!-- Scripts -->

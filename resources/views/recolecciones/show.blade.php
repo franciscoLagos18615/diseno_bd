@@ -5,7 +5,7 @@
 	<div class="col-sm-8">
 		<h2 style="text-align: center;" >
 			{{ $catastrofe->nombre_medida }}
-			<a href="{{ route('recolecciones.edit', $catastrofe->id) }}" class="btn btn-default pull-right">Editar</a>
+			<a href="{{ route('elementos.create', 'id='.$catastrofe->id) }}" class="btn btn-default pull-right">Añadir Elementos</a>
 		</h2>
 		<h4>
 			Fecha de Inicio: <strong>{{ $catastrofe->fecha_inicio }}</strong>			
