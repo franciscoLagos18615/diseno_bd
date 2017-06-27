@@ -15,8 +15,8 @@ class VoluntariadoController extends Controller
 
 	public function show($id)
 	{
-		$catastrofe = Catastrofe::find($id);
-		return view('voluntariados.create', compact('catastrofe'));
+		$catastrofe = Voluntariado::find($id);
+		return view('voluntariados.show', compact('catastrofe'));
 	}
 
 	public function index()

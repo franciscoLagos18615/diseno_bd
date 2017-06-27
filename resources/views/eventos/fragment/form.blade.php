@@ -25,7 +25,6 @@
 </div>
 
 <div class="form-group">
-	{!! Form::label('id_catastrofe', 'toy fondeao') !!}
 	{!! Form::hidden('id_catastrofe', $_GET["id"]) !!}
 </div>
 

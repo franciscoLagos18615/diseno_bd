@@ -202,7 +202,7 @@
 						<?php endif ?>
 						</td>
 						<td>
-							<a href="{{ route('apoyoeconomico.show', $catastrofe->id) }}" class="btn btn-link">Ver detalles</a>
+							<a href="{{ route('recolecciones.show', $catastrofe->id) }}" class="btn btn-link">Ver detalles</a>
 						</td>
 				</tr>
 				@endforeach

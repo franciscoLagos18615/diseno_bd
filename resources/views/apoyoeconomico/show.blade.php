@@ -34,19 +34,25 @@
 </style>
 	<div class="col-sm-8">
 		
-		<h2>
+		<h2 style="text-align: center;">
 			Nombre medida: {{ $catastrofe->nombre_medida }}
-			<a href="{{ route('apoyoeconomico.edit', $catastrofe->id) }}"" class="btn btn-default pull-right">Editar</a>
+			<a href="{{ route('apoyoeconomico.edit', $catastrofe->id) }}" class="btn btn-default pull-right">Editar</a>
 		</h2>
-		<p>
-			<b>Avance:</b> {{ $catastrofe->avance }}
-		</p>
-		<p>
-			<b>Recaudación Actual:</b> {!! $catastrofe->recaudacion_actual !!}
-		</p>
-		<p>
-			<b>Meta: </b>{!! $catastrofe->meta !!}
-		</p>
+		<h4>Recaudación actual: 
+			<strong>${{$catastrofe->recaudacion_actual}}</strong>
+		</h4>
+		<h4>Meta: 
+		<strong>			
+			${!! $catastrofe->meta !!}
+		</strong>
+		</h4>
+		<h4>Avance:
+			<?php if($catastrofe->avance<60): ?>
+						<?php echo "<strong style='color:red;'> {$catastrofe->avance}% </strong>"; ?>
+						<?php else: ?>
+						<?php echo "<strong style='color:green;'> {$catastrofe->avance}% </strong>"; ?>
+						<?php endif ?>
+		</h4>
 
 	</div>
 	<div class="col-sm-4">
@@ -66,6 +72,12 @@
 	</div>
 
 
+
+	<div class="row">
+		<div class="col-xs-12">
+			<hr>
+		</div>	
+	</div>
 
 
 <div class="container">
@@ -92,6 +104,8 @@
 		</div>
 		
 </div>
+
+
 
 <div class="container">
 		<div class="row">

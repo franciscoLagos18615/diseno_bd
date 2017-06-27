@@ -5,7 +5,6 @@
 	<div class="col-sm-8">
 		
 
-
 		<h2>
 			Listado de Catastrofes
 			<a href="{{ route('catastrofes.create') }}" class="btn btn-primary pull-right">Añadir Catastrofe</a>
