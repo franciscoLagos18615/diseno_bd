@@ -28,7 +28,9 @@ class RecoleccionController extends Controller
 
 	public function index()
 	{
-		$catastrofes = Recoleccion::orderBy('id','ASC')->paginate();
+		$catastrofes = Recoleccion::where('valida','true')
+        ->orderBy('id','ASC')
+        ->paginate(4);
 		return view('recolecciones.index', compact('catastrofes'));
 
 	}

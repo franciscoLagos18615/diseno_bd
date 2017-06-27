@@ -1,9 +1,15 @@
 @extends('layout')
 
 @section('content')
+	
+	<div class="row">
+	<div class="col-sm-12">
+		<a href="/postTweet"><button class="btn btn-primary"></button></a>
+	</div>
+	</div>
 
-	<div class="col-sm-">
-		
+	
+	<div class="col-sm-12"> 
 		<h2>
 			Listado de Recolecciones
 		</h2>
@@ -250,6 +256,7 @@
 					<th colspan="3">&nbsp;</th>
 				</tr>
 			</thead>
+
 			<tbody>
 				@foreach($apoyoseconomicos->items() as $apoyoeconomico)	
 				<tr>

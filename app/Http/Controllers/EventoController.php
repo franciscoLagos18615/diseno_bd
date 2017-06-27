@@ -25,7 +25,9 @@ class EventoController extends Controller
 
 	public function index()
 	{
-		$catastrofes = Evento::orderBy('id','ASC')->paginate();
+		$catastrofes = Evento::where('valida','true')
+        ->orderBy('id','ASC')
+        ->paginate(4);
 		return view('eventos.index', compact('catastrofes'));
 
 	}

@@ -16,7 +16,7 @@ class CatastrofeUsuarioController extends Controller
 	{
 		$catastrofes = Catastrofe::orderBy('id','ASC')->paginate();
 		//dd($products);
-		return view('catastrofesusuarios.index', compact('catastrofes'));
+		return view('catastrofesusuario.index', compact('catastrofes'));
 
 	}
 
@@ -31,17 +31,17 @@ class CatastrofeUsuarioController extends Controller
 
 
 
-		$apoyos_economicos = DB::table(DB::raw('apoyos_economicos, catastrofes WHERE apoyos_economicos.id_catastrofe = catastrofes.id AND catastrofes.id='.$id))
+		$apoyos_economicos = DB::table(DB::raw('apoyos_economicos, catastrofes WHERE apoyos_economicos.id_catastrofe = catastrofes.id AND catastrofes.id='.$id.' AND apoyos_economicos.valida=true'))
 		->select('apoyos_economicos.*')
 		->paginate(5);
 
-		$recolecciones = DB::table(DB::raw('recolecciones, catastrofes WHERE recolecciones.id_catastrofe = catastrofes.id AND catastrofes.id='.$id))
+		$recolecciones = DB::table(DB::raw('recolecciones, catastrofes WHERE recolecciones.id_catastrofe = catastrofes.id AND catastrofes.id='.$id.' AND recolecciones.valida=true'))
 		->select('recolecciones.*')
 		->paginate(5);
-		$eventos = DB::table(DB::raw('eventos, catastrofes WHERE eventos.id_catastrofe = catastrofes.id AND catastrofes.id='.$id))
+		$eventos = DB::table(DB::raw('eventos, catastrofes WHERE eventos.id_catastrofe = catastrofes.id AND catastrofes.id='.$id.' AND eventos.valida=true'))
 		->select('eventos.*')
 		->paginate(5);
-		$voluntariados = DB::table(DB::raw('voluntariados, catastrofes WHERE voluntariados.id_catastrofe = catastrofes.id AND catastrofes.id='.$id))
+		$voluntariados = DB::table(DB::raw('voluntariados, catastrofes WHERE voluntariados.id_catastrofe = catastrofes.id AND catastrofes.id='.$id.' AND voluntariados.valida=true'))
 		->select('voluntariados.*')
 		->paginate(5);
 

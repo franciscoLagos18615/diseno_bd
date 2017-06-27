@@ -25,7 +25,9 @@ class VoluntariadoController extends Controller
 
 	public function index()
 	{
-		$catastrofes = Voluntariado::orderBy('id','ASC')->paginate();
+		$catastrofes = Voluntariado::where('valida','true')
+        ->orderBy('id','ASC')
+        ->paginate(4);
 		return view('voluntariados.index', compact('catastrofes'));
 
 	}

@@ -11,7 +11,6 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
-
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
@@ -77,7 +76,7 @@
 
 
 
-    <div class="container-fluid display-table" style="padding-left: 0;">
+    <div class="container-fluid display-table" style="padding-left: 0; height: 100%;">
         <div class="row display-table-row">
             <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
                 <div class="logo">
@@ -88,8 +87,16 @@
                 <div class="navi">
                     <ul>
                         <li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
+                        
+                        <?php if(Auth::user()->tipo_usuario==0 ): ?>
                         <li><a href="{{route('catastrofes.index')}}"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Catastrofes</span></a></li>
+                        <li><a href="{{route('medidasgobierno.index')}}"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Medidas Gobierno</span></a></li>
+                        <li><a href="/panelmedidas"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Panel Medidas Críticas</span></a></li>
+
+                        <?php else: ?>
+                        <li><a href="{{route('catastrofesusuario.index')}}"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Catastrofe usuario</span></a></li>
                         <li><a href="{{route('medidas.index')}}"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Medidas</span></a></li>
+                        <?php endif; ?>
                         <li><a href="{{route('apoyoeconomico.index')}}"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Apoyos Económicos</span></a></li>
                         <li><a href="{{route('recolecciones.index')}}"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Recolecciones</span></a></li>
                         <li><a href="{{route('eventos.index')}}"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Eventos</span></a></li>
@@ -99,13 +106,9 @@
             </div>
 			
 			<div class="col-md-10 col-sm-11 display-table-cell v-align">
-			@yield('content')
-			</div>
-
-
-
+            @yield('content')
+            </div>
         </div>
-
     </div> 
     </div>
 

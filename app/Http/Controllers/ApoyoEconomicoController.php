@@ -24,19 +24,12 @@ class ApoyoEconomicoController extends Controller
 		->where('apoyos_economicos.id','=',$id)
 		->select('cuentas_banco.*')
 		->get();
-
-
-
-		
-
-
 // $comentarios = DB::table('comentarios')
 // 		->join('muros','comentarios.id_muro','=','muros.id')
 //         ->join(	'apoyos_economicos','apoyos_economicos.id_muro','=', 'muro.id')
 //         ->where('apoyos_economicos.id','=',$id)
 //         -> select('cuentas_banco.*')         
 //         ->get();
-
 		$comentarios = DB::table(DB::raw('users, comentarios, muros, apoyos_economicos WHERE comentarios.id_muro = muros.id AND apoyos_economicos.id_muro = muros.id AND apoyos_economicos.id='.$id.' AND users.id = comentarios.id_usuario order by comentarios.created_at desc'))
 		->select(DB::raw('comentarios.*, users.usuario, users.email'))
 		->get();
@@ -46,7 +39,9 @@ class ApoyoEconomicoController extends Controller
 
 	public function index()
 	{
-		$catastrofes = Apoyo_Economico::orderBy('id','ASC')->paginate();
+		$catastrofes = Apoyo_economico::where('valida','true')
+        ->orderBy('id','ASC')
+        ->paginate(4);
 		return view('apoyoeconomico.index', compact('catastrofes'));
 
 	}
