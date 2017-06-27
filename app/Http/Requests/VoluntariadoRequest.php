@@ -24,13 +24,13 @@ class VoluntariadoRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre_medida' => 'required',
+             'nombre_medida' => 'required│max:15│alpha',
             'fecha_inicio' => 'required',
             'fecha_termino' => 'required',
-            'direccion' => 'required',
+            'direccion' => 'required│max:50│alpha',
             'personas' => 'required',
-            'perfil_voluntario' => 'required',
-            'tipo_trabajo' => 'required'
+            'perfil_voluntario' => 'required│max:20│alpha',
+            'tipo_trabajo' => 'required│max:20│alpha',
 
         ];
     }
