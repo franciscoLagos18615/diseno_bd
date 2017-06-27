@@ -20,7 +20,7 @@ class esGobierno
                 return response('No autorizado',401);
             }
             else{
-                return redirect()->to('/');
+                return redirect()->to('home');
             }
         }
         return $next($request);

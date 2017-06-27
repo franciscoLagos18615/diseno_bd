@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RecoleccionRequest extends FormRequest
+class PersonaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,15 +24,12 @@ class RecoleccionRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre_medida' => 'required|max:50',
-            'fecha_inicio' => 'required',
-            'fecha_termino' => 'required',
-            'direccion' => 'required',
-            'elementos_necesarios' => 'required',
-            'perfil_voluntario' => 'required',
+            'run' => 'required',
+            'nombre' => 'required',
+            'apellido_paterno' => 'required',
+            'apellido_materno' => 'required',
+            'id_voluntariado' => 'required'
         ];
+
     }
-
-
-    'bail|required|unique:posts|max:255'
 }
