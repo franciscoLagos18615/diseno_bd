@@ -5,12 +5,8 @@
 	<div class="col-sm-8">
 		
 		<h2>
-		CREAR CATASTROFEdd
-		{{ $catastrofe->id }}
-			<a href="{{ route('catastrofes.index') }}"" class="btn btn-default pull-right">Regresar</a>
-		}
-		}
-		}
+		CREAR CATASTROFE
+			<a href="{{ route('catastrofes.index') }}" class="btn btn-default pull-right">Regresar</a>
 		</h2>
 
 		@include('catastrofes.fragment.error')

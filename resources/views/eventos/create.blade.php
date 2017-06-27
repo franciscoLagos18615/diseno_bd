@@ -7,7 +7,7 @@
 		<h2>
 		Añadir Evento
 
-			<a href="{{ route('recolecciones.index') }}"" class="btn btn-default pull-right">Regresar</a>
+			<a href="{{ route('recolecciones.index') }}" class="btn btn-default pull-right">Regresar</a>
 		
 		</h2>
 
