@@ -10,6 +10,7 @@ use DB;
 use App\Http\Requests\CatastrofeRequest;
 use App\Http\Requests\RecoleccionRequest;
 use Auth;
+use Twitter;
 
 class RecoleccionController extends Controller
 {
@@ -81,6 +82,7 @@ class RecoleccionController extends Controller
 		DB::table('recolecciones')
 		->where('recolecciones.id','=',$id)
 		->update(['valida'=>true]);
+		Twitter::postTweet(['status' => 'Una nueva medida Recolección ha sido aprobada, ayúdanos!', 'format' => 'json']);
 
 		return redirect()->route('medidasgobierno.index')->with('info', 'La medida fue activada.');
 	}

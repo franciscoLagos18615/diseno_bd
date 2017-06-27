@@ -11,6 +11,7 @@ use App\Http\Requests\CatastrofeRequest;
 use App\Http\Requests\ApoyoEconomicoRequest;
 use DB;
 use Auth;
+use Twitter;
 
 class ApoyoEconomicoController extends Controller
 {
@@ -106,6 +107,7 @@ class ApoyoEconomicoController extends Controller
 		->where('apoyos_economicos.id','=',$id)
 		->update(['valida'=>true]);
 
+		Twitter::postTweet(['status' => 'Una nueva medida Apoyo Económico ha sido aprobada, ayúdanos!', 'format' => 'json']);
 		return redirect()->route('medidasgobierno.index')->with('info', 'La medida fue activada.');
 	}
     

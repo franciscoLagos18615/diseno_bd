@@ -9,6 +9,7 @@ use App\Muro;
 use App\Http\Requests\VoluntariadoRequest;
 use Auth;
 use DB;
+use Twitter;
 
 class VoluntariadoController extends Controller
 {
@@ -78,6 +79,8 @@ class VoluntariadoController extends Controller
 		DB::table('voluntariados')
 		->where('voluntariados.id','=',$id)
 		->update(['valida'=>true]);
+
+		Twitter::postTweet(['status' => 'Una nueva medida Voluntariado ha sido aprobada, ayúdanos!', 'format' => 'json']);
 
 		return redirect()->route('medidasgobierno.index')->with('info', 'La medida fue activada.');
 	}

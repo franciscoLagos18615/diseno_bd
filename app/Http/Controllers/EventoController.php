@@ -10,6 +10,7 @@ use App\Http\Requests\CatastrofeRequest;
 use App\Http\Requests\EventoRequest;
 use Auth;
 use DB;
+use Twitter;
 
 class EventoController extends Controller
 {
@@ -79,6 +80,8 @@ class EventoController extends Controller
 		DB::table('eventos')
 		->where('eventos.id','=',$id)
 		->update(['valida'=>true]);
+
+		Twitter::postTweet(['status' => 'Una nueva medida Evento ha sido aprobada, ayúdanos!', 'format' => 'json']);
 
 		return redirect()->route('medidasgobierno.index')->with('info', 'El evento ha sido activado.');
 	}
