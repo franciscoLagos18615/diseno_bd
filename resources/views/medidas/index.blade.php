@@ -129,7 +129,7 @@
 							<a href="{{ route('voluntariados.show', $voluntariado->id) }}" class="btn btn-link">Ver Voluntariado</a>
 						</td>
 						<td>
-							<a href="{{ route('voluntariados.create', 'id='.$voluntariado->id) }}" class="btn btn-link">Inscribirme</a>
+							<a href="{{ route('personas.create', 'id='.$voluntariado->id) }}" class="btn btn-link">Inscribirme</a>
 						</td>
 				</tr>
 				@endforeach
