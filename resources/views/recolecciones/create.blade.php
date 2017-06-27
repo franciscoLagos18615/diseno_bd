@@ -3,10 +3,10 @@
 @section('content')
 
 	<div class="col-sm-8">
-		
+		<p>{{$_GET["id"]}}</p>
 		<h2>
 		Añadir Recolección
-			<a href="{{ route('recolecciones.index') }}"" class="btn btn-default pull-right">Regresar</a>
+			<a href="{{ route('recolecciones.index') }}"	 class="btn btn-default pull-right">Regresar</a>
 		</h2>
 
 		@include('recolecciones.fragment.error')

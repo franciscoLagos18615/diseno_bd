@@ -6,7 +6,7 @@
 	<div class="col-sm-8">
 		<h2>
 		Añadir Apoyo Económico
-			<a href="{{ route('apoyoeconomico.index') }}"" class="btn btn-default pull-right">Regresar</a>
+			<a href="{{ route('apoyoeconomico.index') }}" class="btn btn-default pull-right">Regresar</a>
 		</h2>
 
 		@include('apoyoeconomico.fragment.error')

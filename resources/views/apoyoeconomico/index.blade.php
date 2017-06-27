@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<div class="col-sm-8">
+	<div class="col-sm-12">
 		
 		<!-- <h2>
 			Listado de ApoyosEconomicos
@@ -14,9 +14,11 @@
 				<tr>
 					<th width="20px">ID</th>
 					<th>Nombre medida</th>
+					<th>Recaudación actual</th>
+					<th>Meta</th>
 					<th>Avance</th>
-					<th>Fecha inicio</th>
 					<th>Fecha de término</th>
+					<td>Dias restantes</td>
 					<th>Estado medida</th>
 					<th colspan="3">&nbsp;</th>
 				</tr>
@@ -29,13 +31,27 @@
 						<strong>{{ $catastrofe->nombre_medida }}</strong>
 						</td>
 						<td>
-						<strong>{{ $catastrofe->avance }}</strong>
+							<strong>{{$catastrofe->recaudacion_actual}}</strong>
 						</td>
 						<td>
-						<strong>{{ $catastrofe->fecha_inicio }}</strong>
+							<strong>{{$catastrofe->meta}}</strong>
+						</td>
+						<td>						
+						<?php if($catastrofe->avance<60): ?>
+						<?php echo "<strong style='color:red;'> {$catastrofe->avance}% </strong>"; ?>
+						<?php else: ?>
+						<?php echo "<strong style='color:green;'> {$catastrofe->avance}% </strong>"; ?>
+						<?php endif ?>
 						</td>
 						<td>
 						<strong>{{ $catastrofe->fecha_termino }}</strong>
+						</td>
+						<td>
+							<?php if ( (strtotime($catastrofe->fecha_termino) - time()) / (60*60*24)  < 0) :?>
+								<?php echo 0;?>
+							<?php else: ?>
+								<?php echo round((strtotime($catastrofe->fecha_termino) - time())/(60*60*24)); ?>
+							<?php endif; ?>
 						</td>
 						<td>
 						<?php if(!$catastrofe->valida): ?>
@@ -43,7 +59,6 @@
 						<?php else: ?>
 						<?php echo "<strong style='color:green;'> Aprobada </strong>"; ?>
 						<?php endif ?>
-
 						</td>
 
 <!-- 						<td>
@@ -68,10 +83,6 @@
 		{!! $catastrofes->render() !!}
 	</div>
 
-	<div class="col-sm-4">
-		<!--COLUMNA QUE ESTA AL COSTADO DE LA VISTA INDEX -->
-		@include('catastrofes.fragment.aside')
-	</div>
 
 @endsection
 

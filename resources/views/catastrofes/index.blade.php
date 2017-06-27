@@ -42,8 +42,10 @@
 						  <span class="caret"></span></button>
 						  <ul class="dropdown-menu">
 							<li><a href="{{ route('apoyoeconomico.create', 'id='.$catastrofe->id) }}" class="btn btn-link">Apoyo Economico</a></li>
-						    <li><a href="{{ route('apoyoeconomico.create', 'id='.$catastrofe->id) }}" class="btn btn-link">Recolección</a></li>
-						    <li><a href="{{ route('apoyoeconomico.create', 'id='.$catastrofe->id) }}" class="btn btn-link">Evento</a></li>
+						    <li><a href="{{ route('recolecciones.create', 'id='.$catastrofe->id) }}" class="btn btn-link">Recolección</a></li>
+						    <li><a href="{{ route('eventos.create', 'id='.$catastrofe->id) }}" class="btn btn-link">Evento</a></li>
+						    <li><a href="{{ route('voluntariados.create', 'id='.$catastrofe->id) }}" class="btn btn-link">Voluntariado</a></li>
+
 						  </ul>
 						</div>
 

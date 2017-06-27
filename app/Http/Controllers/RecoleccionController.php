@@ -22,7 +22,7 @@ class RecoleccionController extends Controller
 
 	public function index()
 	{
-		$catastrofes = Catastrofe::orderBy('id','ASC')->paginate();
+		$catastrofes = Recoleccion::orderBy('id','ASC')->paginate();
 		return view('recolecciones.index', compact('catastrofes'));
 
 	}
@@ -35,8 +35,6 @@ class RecoleccionController extends Controller
 	public function store(RecoleccionRequest $request)
 	{
 		$recoleccion = new Recoleccion;
-		$muro = new Muro;
-
 		$recoleccion->nombre_medida = $request->nombre_medida;
 		$recoleccion->fecha_inicio = $request->fecha_inicio;
 		$recoleccion->fecha_termino = $request->fecha_termino;
@@ -47,9 +45,12 @@ class RecoleccionController extends Controller
 		$recoleccion->id_usuario = Auth::user()->id;
 		$recoleccion->id_usuario_valida = Auth::user()->id;
 		$recoleccion->avance=0;
-		$recoleccion->id_catastrofe = $request->id;
 		$muro = new Muro;
 		$muro->save();
+		$recoleccion->id_muro=$muro->id;
+		$recoleccion->id_catastrofe = $request->id_catastrofe;
+		
+		
 
 
 

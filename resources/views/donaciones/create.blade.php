@@ -6,7 +6,7 @@
 		
 		<h2>
 		Añadir Recolección
-			<a href="{{ route('donaciones.index') }}"" class="btn btn-default pull-right">Regresar</a>
+			<a href="{{ route('donaciones.index') }}" class="btn btn-default pull-right">Regresar</a>
 		</h2>
 
 		@include('donaciones.fragment.error')
