@@ -34,9 +34,9 @@
 </style>
 	<div class="col-sm-8">
 		
-		<h2>
+		<h2 style="text-align: center;">
 			Nombre medida: {{ $catastrofe->nombre_medida }}
-			<a href="{{ route('apoyoeconomico.edit', $catastrofe->id) }}"" class="btn btn-default pull-right">Editar</a>
+			<a href="{{ route('apoyoeconomico.edit', $catastrofe->id) }}" class="btn btn-default pull-right">Editar</a>
 		</h2>
 		<p>
 			<b>Avance:</b> {{ $catastrofe->avance }}
@@ -67,6 +67,12 @@
 
 
 
+	<div class="row">
+		<div class="col-xs-12">
+			<hr>
+		</div>	
+	</div>
+
 
 <div class="container">
 		<div class="col-md-12 col-xs-10 col-lg-12">
@@ -92,6 +98,8 @@
 		</div>
 		
 </div>
+
+
 
 <div class="container">
 		<div class="row">

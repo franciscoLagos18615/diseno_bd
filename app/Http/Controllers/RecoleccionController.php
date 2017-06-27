@@ -16,8 +16,14 @@ class RecoleccionController extends Controller
 
 	public function show($id)
 	{
-		$catastrofe = Catastrofe::find($id);
-		return view('recolecciones.show', compact('catastrofe'));
+		$catastrofe = Recoleccion::find($id);
+
+		$comentarios = DB::table(DB::raw('users, comentarios, muros, recolecciones WHERE comentarios.id_muro = muros.id AND recolecciones.id_muro = muros.id AND recolecciones.id='.$id.' AND users.id = comentarios.id_usuario order by comentarios.created_at desc'))
+		->select(DB::raw('comentarios.*, users.usuario, users.email'))
+		->get();
+
+
+		return view('recolecciones.show', compact('catastrofe','comentarios'));
 	}
 
 	public function index()

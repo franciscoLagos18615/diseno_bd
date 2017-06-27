@@ -64,21 +64,9 @@
 						<?php echo "<strong style='color:green;'> Aprobada </strong>"; ?>
 						<?php endif ?>
 						</td>
-<!-- 						<td>
-							<a href="{{ route('apoyoeconomico.show', $catastrofe->id) }}" class="btn btn-link">Ver detalles</a>
-						</td> -->
-<!-- 						<td>
-							<a href="{{ route('apoyoeconomico.create', $catastrofe->id) }}" class="btn btn-link">Agregar Recoleccion</a>
-						</td>
 						<td>
-							<a href="{{ route('recolecciones.create', $catastrofe->id) }}" class="btn btn-link">Agregar Apoyo Economico</a>
+							<a href="{{ route('recolecciones.show', $catastrofe->id) }}" class="btn btn-link">Ver detalles</a>
 						</td>
-						<td>
-							<a href="{{ route('recolecciones.create', $catastrofe->id) }}" class="btn btn-link">Agregar Evento</a>
-						</td>
-						<td>
-							<a href="{{ route('recolecciones.create', $catastrofe->id) }}" class="btn btn-link">Agregar voluntariado</a>
-						</td> -->
 				</tr>
 				@endforeach
 			</tbody>
