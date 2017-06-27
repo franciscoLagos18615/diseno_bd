@@ -47,21 +47,6 @@ class MedidaGobiernoController extends Controller
 		$eventos =  DB::table(DB::raw("eventos WHERE eventos.avance > 60 AND eventos.avance < 100 AND (SELECT DATE_PART('day',now()- eventos.fecha_termino)) <10 AND (SELECT EXTRACT(YEAR from eventos.fecha_termino))= date_part('year', current_date)"))
 		->paginate(5);
 
-		// round((strtotime($ ->fecha_termino) - time())/(60*60*24));
-							
-
-
-		// $apoyoseconomicos =
-		//  DB::table(DB::raw("apoyos_economicos WHERE avance>60 AND (SELECT DATE_PART('day', NOW() - fecha_termino ))<=10;"))
-		//  DB::table('apoyos_economicos')
-		// ->where("avance", ">", "0")
-		// ->where("")
-		// ->select('apoyos_economicos.*')		
-		// ->paginate(5);
-
-
-		 // $apoyoseconomicos =  DB::table(DB::raw("apoyos_economicos WHERE apoyos_economicos.avance > 60 AND apoyos_economicos.avance < 100 AND (SELECT DATE_PART('day',now()- apoyos_economicos.fecha_termino)) <10"))
-
 		 $apoyoseconomicos =  DB::table(DB::raw("apoyos_economicos WHERE apoyos_economicos.avance > 60 AND apoyos_economicos.avance < 100 AND (SELECT DATE_PART('day',now()- apoyos_economicos.fecha_termino)) <10 AND (SELECT EXTRACT(YEAR from apoyos_economicos.fecha_termino))= date_part('year', current_date)"))
         ->paginate(5);
 
@@ -75,7 +60,7 @@ class MedidaGobiernoController extends Controller
 		}
 
 
-		return view('medidasgobierno.index', compact('recolecciones','voluntariados','eventos','apoyoseconomicos','twitter'));
+		return view('medidasgobierno.panelmedidas', compact('recolecciones','voluntariados','eventos','apoyoseconomicos','twitter'));
 	}
 
 }

@@ -53,7 +53,7 @@
  
  Auth::routes();
  
- Route::get('/panelmedidas', 'MedidaGobiernoController@panelmedidas'); 
+ Route::get('panelmedidas', 'MedidaGobiernoController@panelmedidas'); 
 
 
  Route::get('/home', function () {
@@ -65,4 +65,4 @@
     return Twitter::postTweet(['status' => 'Tienes 1 o más medidas que poseen más de un 60% de avance y se encuentran a menos de una semana de su plazo máximo', 'format' => 'json']);
 });
  
- Route::post('/apoyoeconomico/1','ComentariosController@store');
+ Route::post('/apoyoeconomico/1','ComentariosController@store'); 

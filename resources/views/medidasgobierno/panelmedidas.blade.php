@@ -2,10 +2,9 @@
 
 @section('content')
 	
-	<div class="row">
+
 	<div class="col-sm-12">
-		<a href="/postTweet"><button class="btn btn-primary"></button></a>
-	</div>
+		<a href="/enviar_tweet"><button class="btn btn-primary">Twitter</button></a>
 	</div>
 
 	
