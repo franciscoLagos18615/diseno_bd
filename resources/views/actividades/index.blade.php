@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<div class="col-sm-12">
+	<div class="col-sm-">
 		
 		<h2>
 			Listado de Recolecciones
@@ -39,7 +39,7 @@
 							<a href="{{ route('catastrofes.show', $recoleccion->id_catastrofe) }}" class="btn btn-link">Ver Catastrofe</a>
 						</td>
 						<td>
-							<a href="{{ route('elementos.create', 'id='.$recoleccion->id) }}" class="btn btn-link">Añadir elementos</a>
+							<a href="{{ route('recolecciones.create', 'id='.$recoleccion->id) }}" class="btn btn-link">Apoyar Medida</a>
 						</td>
 				</tr>
 				@endforeach
@@ -80,11 +80,9 @@
 						<td>
 							<a href="{{ route('catastrofes.show', $evento->id) }}" class="btn btn-link">Ver Catastrofe</a>
 						</td>
-						
 						<td>
-							<a href="{{ route('actividades.create', 'id='.$evento->id) }}" class="btn btn-link">Añadir Actividad</a>
+							<a href="{{ route('recolecciones.create', 'id='.$evento->id) }}" class="btn btn-link">Apoyar Medida</a>
 						</td>
-					
 				</tr>
 				@endforeach
 			</tbody>
@@ -94,7 +92,7 @@
 
 		
 		<div class="row">
-			<div class="col-sm-12">
+			<div class="col-sm-8">
 				<h2>
 			Listado de Voluntariados
 		</h2>
@@ -169,7 +167,7 @@
 							<a href="{{ route('catastrofes.show', $apoyoeconomico->id_catastrofe) }}" class="btn btn-link">Ver Catastrofe</a>
 						</td>
 						<td>
-							<a href="{{ route('donaciones.create', 'id='.$apoyoeconomico->id) }}" class="btn btn-link">Apoyar Medida</a>
+							<a href="{{ route('recolecciones.create', 'id='.$apoyoeconomico->id_catastrofe) }}" class="btn btn-link">Apoyar Medida</a>
 						</td>
 				</tr>
 				@endforeach

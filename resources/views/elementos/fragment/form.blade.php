@@ -9,7 +9,6 @@
 </div>
 
 <div class="form-group">
-	{!! Form::label('id_recoleccion', 'toy fondeao') !!}
 	{!! Form::hidden('id_recoleccion', $_GET["id"]) !!}
 </div>
 

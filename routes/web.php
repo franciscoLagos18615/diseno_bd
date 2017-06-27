@@ -39,7 +39,11 @@
 
  Route::resource('medidasgobierno','MedidaGobiernoController');
 
+ Route::resource('medidasusuario','MedidaUsuarioController');
+
  Route::resource('elementos', 'ElementoController');
+
+ Route::resource('actividades', 'ActividadController');
  
  Auth::routes();
  

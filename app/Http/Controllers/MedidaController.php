@@ -14,14 +14,26 @@ use App\Http\Requests\CatastrofeRequest;
 
 class MedidaController extends Controller
 {
-	public function index()
-	{
-		$recolecciones = Recoleccion::orderBy('id','ASC')->paginate();
-		$voluntariados = Voluntariado::orderBy('id','ASC')->paginate();
-		$eventos = Evento::orderBy('id','ASC')->paginate();
-		$apoyoseconomicos = Apoyo_economico::orderBy('id','ASC')->paginate();
-
-		return view('medidas.index', compact('recolecciones','voluntariados','eventos','apoyoseconomicos'));
-
-	}
+public function index()
+    {
+ 
+        $recolecciones = Recoleccion::where('valida','true')
+        ->orderBy('id','ASC')
+        ->paginate(4);
+ 
+        $voluntariados = Voluntariado::where('valida','true')
+        ->orderBy('id','ASC')
+        ->paginate(4);
+ 
+        $eventos = Evento::where('valida','true')
+        ->orderBy('id','ASC')
+        ->paginate(4);
+ 
+        $apoyoseconomicos = Apoyo_economico::where('valida','true')
+        ->orderBy('id','ASC')
+        ->paginate(4);
+ 
+ 
+        return view('medidas.index', compact('recolecciones','voluntariados','eventos','apoyoseconomicos'));
+    }
 }

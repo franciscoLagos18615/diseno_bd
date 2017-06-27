@@ -34,11 +34,20 @@ class CatastrofeController extends Controller
 
 		$apoyos_economicos = DB::table(DB::raw('apoyos_economicos, catastrofes WHERE apoyos_economicos.id_catastrofe = catastrofes.id AND catastrofes.id='.$id))
 		->select('apoyos_economicos.*')
-		->paginate();
-		
+		->paginate(5);
+
+		$recolecciones = DB::table(DB::raw('recolecciones, catastrofes WHERE recolecciones.id_catastrofe = catastrofes.id AND catastrofes.id='.$id))
+		->select('recolecciones.*')
+		->paginate(5);
+		$eventos = DB::table(DB::raw('eventos, catastrofes WHERE eventos.id_catastrofe = catastrofes.id AND catastrofes.id='.$id))
+		->select('eventos.*')
+		->paginate(5);
+		$voluntariados = DB::table(DB::raw('voluntariados, catastrofes WHERE voluntariados.id_catastrofe = catastrofes.id AND catastrofes.id='.$id))
+		->select('voluntariados.*')
+		->paginate(5);
 
 
-		return view('catastrofes.show', compact(['catastrofe','comentarios','apoyos_economicos']));
+		return view('catastrofes.show', compact(['catastrofe','comentarios','apoyos_economicos','recolecciones','eventos','voluntariados']));
 	}
 
 	public function create()

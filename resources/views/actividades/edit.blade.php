@@ -6,7 +6,7 @@
 		
 		<h2>
 		Editar Producto
-			<a href="{{ route('recolecciones.index') }}" class="btn btn-default pull-right">Editar</a>
+			<a href="{{ route('recolecciones.index') }}"" class="btn btn-default pull-right">Editar</a>
 		</h2>
 
 			@include('recolecciones.fragment.error')

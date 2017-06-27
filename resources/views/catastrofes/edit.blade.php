@@ -6,7 +6,7 @@
 		
 		<h2>
 		Editar Producto > {{ Auth::user()->usuario }}
-			<a href="{{ route('catastrofes.index') }}"" class="btn btn-default pull-right">Editar</a>
+			<a href="{{ route('catastrofes.index') }}" class="btn btn-default pull-right">Editar</a>
 		</h2>
 
 			@include('catastrofes.fragment.error')
