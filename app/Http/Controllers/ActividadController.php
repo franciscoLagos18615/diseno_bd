@@ -9,6 +9,7 @@ use App\Muro;
 use App\Http\Requests\ActividadRequest;
 use App\Http\Requests\ElementoRequest;
 use Auth;
+use DB;
 
 class ActividadController extends Controller
 {
@@ -43,7 +44,13 @@ class ActividadController extends Controller
 		$actividad->id_usuario = Auth::user()->id;
 		$actividad->save();
 
-		return redirect()->route('medidasusuario.index')->with('info', 'La actividad fue añadida');
+		DB::select(DB::raw('select avanceEvento('.$request->id_evento.')'));
+
+
+
+
+
+		return redirect()->route('medidas.index')->with('info', 'La actividad fue añadida');
 	}
 
 		public function destroy($id)
