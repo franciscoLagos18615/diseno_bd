@@ -24,7 +24,7 @@ class RecoleccionRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre_medida' => 'required',
+            'nombre_medida' => 'required|max:50',
             'fecha_inicio' => 'required',
             'fecha_termino' => 'required',
             'direccion' => 'required',
@@ -32,4 +32,7 @@ class RecoleccionRequest extends FormRequest
             'perfil_voluntario' => 'required',
         ];
     }
+
+
+    'bail|required|unique:posts|max:255'
 }

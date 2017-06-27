@@ -95,6 +95,10 @@
 						<td>
 							<a href="{{ route('actividades.create', 'id='.$evento->id) }}" class="btn btn-link">Añadir Actividad</a>
 						</td>
+
+						<td>
+							<a href="{{ route('catastrofesusuario.show',$evento->id_catastrofe) }}" class="btn btn-link">Ver Catastrofe</a>
+						</td>
 						
 				</tr>
 				@endforeach

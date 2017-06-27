@@ -37,16 +37,11 @@
 		
 		<h2>
 			{{ $catastrofe->region }}
-			<a href="{{ route('catastrofes.edit', $catastrofe->id) }}"  class="btn btn-default pull-right">Editar</a>
 		</h2>
 		<p>
 			{{ $catastrofe->comuna }}
 		</p>
 		{!! $catastrofe->descripcion !!}
-	</div>
-	<div class="col-sm-4">
-		<!--Comentario en HTML -->
-		@include('catastrofes.fragment.aside')
 	</div>
 
 <?php if(count($apoyos_economicos)!=0): ?>

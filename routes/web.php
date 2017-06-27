@@ -10,8 +10,7 @@
  | contains the "web" middleware group. Now create something great!
  |
  */
- 
- 
+
  Route::get('/', function () {
      return view('welcome');
  });
@@ -23,8 +22,11 @@
   Route::get('view', function(){
   	return view('index');
  });
- 
+ Route::group(['middleware' => ['auth','es_gobierno']], function(){
  Route::resource('catastrofes','CatastrofeController');
+ });
+
+  Route::resource('catastrofesusuario','CatastrofeUsuarioController');
  
  Route::resource('recolecciones','RecoleccionController');
   Route::resource('donaciones','DonacionController');
@@ -37,7 +39,9 @@
 
  Route::resource('medidas', 'MedidaController');
 
- Route::resource('medidasgobierno','MedidaGobiernoController');
+ Route::group(['middleware' => ['auth','es_gobierno']], function(){
+ 	 Route::resource('medidasgobierno','MedidaGobiernoController');
+ });
 
  Route::resource('medidasusuario','MedidaUsuarioController');
 
@@ -52,5 +56,10 @@
  Route::get('/home', function () {
      return view('home');
  });
+
+ Route::get('/enviar_tweet', function()
+{
+    return Twitter::postTweet(['status' => 'LO debo confesar ', 'format' => 'json']);
+});
  
  Route::post('/apoyoeconomico/1','ComentariosController@store');
