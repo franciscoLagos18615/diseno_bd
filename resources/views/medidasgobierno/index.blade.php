@@ -36,6 +36,14 @@
 						<strong>{{ $recoleccion->elementos_necesarios }}</strong>
 						</td>
 						<td>
+						<?php if(!$recoleccion->valida): ?>
+						<?php echo "<strong style='color:red;'> NO </strong>"; ?>
+						<?php else: ?>
+						<?php echo "<strong style='color:green;'> SI </strong>"; ?>
+						<?php endif ?>
+
+						</td>
+						<td>
 							<form action="{{ route('recolecciones.destroy', $recoleccion->id) }}" method="POST">
 
 								{{ csrf_field() }}
@@ -108,6 +116,15 @@
 						</td>
 
 						<td>
+						<?php if(!$evento->valida): ?>
+						<?php echo "<strong style='color:red;'> NO </strong>"; ?>
+						<?php else: ?>
+						<?php echo "<strong style='color:green;'> SI </strong>"; ?>
+						<?php endif ?>
+
+						</td>
+
+						<td>
 							{!! Form::model($evento, ['route' => ['eventos.update', $evento->id], 'method' => 'PUT']) !!}
 
 								<div class="form-group">
@@ -173,6 +190,14 @@
 								<button class="btn btn-link">Eliminar Medida</button>
 							</form>
 						</td>
+						<td>
+						<?php if(!$voluntariado->valida): ?>
+						<?php echo "<strong style='color:red;'> NO </strong>"; ?>
+						<?php else: ?>
+						<?php echo "<strong style='color:green;'> SI </strong>"; ?>
+						<?php endif ?>
+
+						</td>
 
 						<td>
 							{!! Form::model($voluntariado, ['route' => ['voluntariados.update', $voluntariado->id], 'method' => 'PUT']) !!}
@@ -227,16 +252,23 @@
 						</td>
 						
 						<td>
-							<form action="{{ route('apoyoseconomicos.destroy', $apoyoeconomico->id) }}" method="POST">
+							<form action="{{ route('apoyoeconomico.destroy', $apoyoeconomico->id) }}" method="POST">
 
 								{{ csrf_field() }}
 								<input type="hidden" name="_method" value="DELETE">
 								<button class="btn btn-link">Eliminar Medida</button>
 							</form>
 						</td>
-
 						<td>
-							{!! Form::model($apoyoeconomico, ['route' => ['apoyoseconomicos.update', $apoyoeconomico->id], 'method' => 'PUT']) !!}
+						<?php if(!$apoyoeconomico->valida): ?>
+						<?php echo "<strong style='color:red;'> NO </strong>"; ?>
+						<?php else: ?>
+						<?php echo "<strong style='color:green;'> SI </strong>"; ?>
+						<?php endif ?>
+
+						</td>
+						<td>
+							{!! Form::model($apoyoeconomico, ['route' => ['apoyoeconomico.update', $apoyoeconomico->id], 'method' => 'PUT']) !!}
 
 								<div class="form-group">
 								{!! Form::submit('Activar Medida', ['class' => 'btn btn-primary']) !!}
