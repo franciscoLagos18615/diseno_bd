@@ -27,7 +27,7 @@ class ApoyoEconomicoRequest extends FormRequest
             'nombre_medida' => 'required',
             'fecha_inicio' => 'required',
             'fecha_termino' => 'required',
-            'meta' => 'required',
+            'meta' => 'required|integer',
         ];
     }
 }

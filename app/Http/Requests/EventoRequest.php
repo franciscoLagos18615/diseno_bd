@@ -27,8 +27,8 @@ class EventoRequest extends FormRequest
            'nombre_medida' => 'required',
             'fecha_inicio' => 'required',
             'fecha_termino' => 'required',
-            'hora' => 'required',
-            'meta' => 'required',
+            'hora' => 'required|time',
+            'meta' => 'required|integer',
         ];
 
         

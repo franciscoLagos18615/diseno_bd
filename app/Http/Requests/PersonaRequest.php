@@ -24,7 +24,7 @@ class PersonaRequest extends FormRequest
     public function rules()
     {
         return [
-            'run' => 'required',
+            'run' => 'required|integer',
             'nombre' => 'required',
             'apellido_paterno' => 'required',
             'apellido_materno' => 'required',

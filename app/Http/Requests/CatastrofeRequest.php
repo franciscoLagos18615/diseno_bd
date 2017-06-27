@@ -31,3 +31,4 @@ class CatastrofeRequest extends FormRequest
         ];
     }
 }
+
