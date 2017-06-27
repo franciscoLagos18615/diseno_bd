@@ -6,7 +6,7 @@
 		
 		<h2>
 		Añadir Elementos 
-			<a href="{{ route('medidas.index') }}"" class="btn btn-default pull-right">Regresar</a>
+			<a href="{{ route('medidas.index') }}" class="btn btn-default pull-right">Regresar</a>
 		
 		</h2>
 

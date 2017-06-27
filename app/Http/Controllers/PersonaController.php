@@ -10,6 +10,7 @@ use App\Persona;
 use App\Http\Requests\ActividadRequest;
 use App\Http\Requests\PersonaRequest;
 use Auth;
+use DB;
 
 class PersonaController extends Controller
 {
@@ -41,11 +42,13 @@ class PersonaController extends Controller
 		$persona->nombre = $request->nombre;
 		$persona->apellido_paterno = $request->apellido_paterno;
 		$persona->apellido_materno = $request->apellido_materno;
-		$persona->id_recoleccion = 11;
-		$persona->id_apoyo = 1;
-		$persona->id_evento = 34;
+		$persona->id_recoleccion = 4;
+		$persona->id_apoyo = 5;
+		$persona->id_evento = 1;
 		$persona->id_voluntariado = $request->id_voluntariado;
 		$persona->save();
+
+		DB::select(DB::raw('select avanceVoluntariado('.$request->id_voluntariado.')'));
 
 		return redirect()->route('medidasusuario.index')->with('info', 'Has sido inscrito');
 	}

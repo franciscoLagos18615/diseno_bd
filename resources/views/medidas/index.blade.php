@@ -36,7 +36,7 @@
 						<strong>{{ $recoleccion->elementos_necesarios }}</strong>
 						</td>
 						<td>
-							<a href="{{ route('catastrofes.show', $recoleccion->id_catastrofe) }}" class="btn btn-link">Ver Catastrofe</a>
+							<a href="{{ route('catastrofes.show', $recoleccion->id_catastrofe) }}" class="btn btn-link">Ver Recolección</a>
 						</td>
 						<td>
 							<a href="{{ route('elementos.create', 'id='.$recoleccion->id) }}" class="btn btn-link">Añadir elementos</a>
@@ -78,7 +78,7 @@
 						<strong>{{ $evento->meta }}</strong>
 						</td>
 						<td>
-							<a href="{{ route('catastrofes.show', $evento->id) }}" class="btn btn-link">Ver Catastrofe</a>
+							<a href="{{ route('catastrofes.show', $evento->id) }}" class="btn btn-link">Ver Evento</a>
 						</td>
 						
 						<td>
@@ -126,10 +126,10 @@
 						<strong>{{ $voluntariado->meta }}</strong>
 						</td>
 						<td>
-							<a href="{{ route('recolecciones.show', $voluntariado->id) }}" class="btn btn-link">Ver Catastrofe</a>
+							<a href="{{ route('voluntariados.show', $voluntariado->id) }}" class="btn btn-link">Ver Voluntariado</a>
 						</td>
 						<td>
-							<a href="{{ route('recolecciones.create', 'id='.$voluntariado->id) }}" class="btn btn-link">Apoyar Medida</a>
+							<a href="{{ route('personas.create', 'id='.$voluntariado->id) }}" class="btn btn-link">Inscribirme</a>
 						</td>
 				</tr>
 				@endforeach
@@ -166,10 +166,10 @@
 						</td>
 						
 						<td>
-							<a href="{{ route('catastrofes.show', $apoyoeconomico->id_catastrofe) }}" class="btn btn-link">Ver Catastrofe</a>
+							<a href="{{ route('catastrofes.show', $apoyoeconomico->id_catastrofe) }}" class="btn btn-link">Ver medida</a>
 						</td>
 						<td>
-							<a href="{{ route('donaciones.create', 'id='.$apoyoeconomico->id) }}" class="btn btn-link">Apoyar Medida</a>
+							<a href="{{ route('donaciones.create', 'id='.$apoyoeconomico->id) }}" class="btn btn-link">Donar</a>
 						</td>
 				</tr>
 				@endforeach

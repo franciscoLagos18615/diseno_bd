@@ -6,7 +6,7 @@
 		
 		<h2>
 			Nombre medida: {{ $catastrofe->nombre_medida }}
-			<a href="{{ route('eventos.edit', $catastrofe->id) }}" class="btn btn-default pull-right">Editar</a>
+			<a href="{{ route('actividades.create', 'id='.$catastrofe->id) }}" class="btn btn-default pull-right"><button class="btn btn-primary">Editar</button></a>
 		</h2>
 		<h4>Dirección: 
 			<strong>{{$catastrofe->direccion}}</strong>

@@ -16,7 +16,11 @@ class VoluntariadoController extends Controller
 	public function show($id)
 	{
 		$catastrofe = Voluntariado::find($id);
-		return view('voluntariados.show', compact('catastrofe'));
+		$comentarios = DB::table(DB::raw('users, comentarios, muros, voluntariados WHERE comentarios.id_muro = muros.id AND voluntariados.id_muro = muros.id AND voluntariados.id='.$id.' AND users.id = comentarios.id_usuario order by comentarios.created_at desc'))
+		->select(DB::raw('comentarios.*, users.usuario, users.email'))
+		->get();
+
+		return view('voluntariados.show', compact('catastrofe','comentarios'));
 	}
 
 	public function index()

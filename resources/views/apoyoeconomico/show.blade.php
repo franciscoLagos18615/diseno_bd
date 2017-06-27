@@ -36,7 +36,7 @@
 		
 		<h2 style="text-align: center;">
 			Nombre medida: {{ $catastrofe->nombre_medida }}
-			<a href="{{ route('apoyoeconomico.edit', $catastrofe->id) }}" class="btn btn-default pull-right">Editar</a>
+			<a href="{{ route('donaciones.create', 'id='.$catastrofe->id) }}" class="btn btn-default pull-right">Donar</a>
 		</h2>
 		<h4>Recaudación actual: 
 			<strong>${{$catastrofe->recaudacion_actual}}</strong>
