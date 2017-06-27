@@ -24,7 +24,7 @@ class ApoyoEconomicoRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre_medida' => 'required',
+            'nombre_medida' => 'required|max:15',
             'fecha_inicio' => 'required',
             'fecha_termino' => 'required',
             'meta' => 'required|integer',
