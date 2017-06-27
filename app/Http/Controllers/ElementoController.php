@@ -9,6 +9,7 @@ use App\Muro;
 use App\Http\Requests\CatastrofeRequest;
 use App\Http\Requests\ElementoRequest;
 use Auth;
+use DB;
 
 class ElementoController extends Controller
 {
@@ -42,6 +43,10 @@ class ElementoController extends Controller
 		$elemento->cantidad = $request->cantidad;
 		$elemento->id_recoleccion = $request->id_recoleccion;
 		$elemento->save();
+
+
+
+		DB::select(DB::raw('select avanceRecoleccion('.$request->id_recoleccion.')'));
 
 		return redirect()->route('medidas.index')->with('info', 'El Elemento fue añadido');
 	}
